@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_css">
+    <content_css action="INSERT_OR_UPDATE">
+        <name>fb-main.css</name>
+        <style>body {&#13;
+	padding: 0;&#13;
+	margin: 10px 0;&#13;
+	background: #000000;&#13;
+        background-color: #000000;&#13;
+}&#13;
+		&#13;
+#frmb-1593365541413-save-action {&#13;
+	display: none;&#13;
+}</style>
+        <sys_class_name>content_css</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-06-27 12:30:52</sys_created_on>
+        <sys_id>d538f65bdb691010ab71f7af29961983</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>fb-main.css</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>content_css_d538f65bdb691010ab71f7af29961983</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-04 16:39:16</sys_updated_on>
+        <type>local</type>
+        <url/>
+    </content_css>
+</record_update>

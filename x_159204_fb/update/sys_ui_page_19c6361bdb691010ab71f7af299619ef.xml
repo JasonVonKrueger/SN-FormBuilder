@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[/*
+Event.observe(window, "load", function() {
+    onLoad();
+});
+*/
+window.setTimeout(renderFormBuilder, 800);
+
+function renderFormBuilder() {
+    var gUrl = new GlideURL();
+    gUrl.setFromCurrent();
+    var form_id = gUrl.getParam("form_id");
+
+    var fields = [{
+        label: "Email",
+        type: "text",
+        subtype: "email",
+        icon: "✉"
+    }];
+
+    //var formBuilder = $(fbEditor).formBuilder(fields);
+
+    if (form_id) {
+        var ga = new GlideAjax('x_159204_fb.Data_Processor');
+        ga.addParam('sysparm_name', 'loadFormData');
+        ga.addParam('sysparm_form_sysid', form_id);
+
+        ga.getXML(parseResults);
+    } else {
+        var fbEditor = document.getElementById("build-wrap");
+
+        var options = {
+            disabledActionButtons: ['data'],
+            onSave: function(evt, form_data) {
+                var form_desc = document.getElementById('form_desc').value;
+                var ga = new GlideAjax('x_159204_fb.Data_Processor');
+                ga.addParam('sysparm_name', 'saveFormData');
+                ga.addParam('sysparm_form_data', form_data);
+                ga.addParam('sysparm_form_desc', form_desc);
+
+                ga.getXML(parseResults);
+            },
+            inputSets: [{
+                label: 'Requester Details',
+                name: 'user-details', // optional - one will be generated from the label if name not supplied
+                showHeader: true, // optional - Use the label as the header for this set of inputs
+                fields: [{
+                        type: 'text',
+                        label: 'First Name',
+                        className: 'form-control'
+                    },
+                    {
+                        type: 'select',
+                        label: 'Profession',
+                        className: 'form-control',
+                        values: [{
+                                label: 'Street Sweeper',
+                                value: 'option-2',
+                                selected: false
+                            },
+                            {
+                                label: 'Brain Surgeon',
+                                value: 'option-3',
+                                selected: false
+                            }
+                        ]
+                    },
+                    {
+                        type: 'textarea',
+                        label: 'Short Bio:',
+                        className: 'form-control'
+                    }
+                ]
+            }, ]
+        };
+
+        $(fbEditor).formBuilder(buildOptions());
+    }
+}
+
+function parseResults(response) {
+    var results = response.responseXML.getElementsByTagName("result");
+
+    if (results) {
+        if (results[0].getAttribute('handler') == 'saveFormData') {
+            var form_id = results[0].getAttribute('form_id');
+
+            var x = document.getElementById("snackbar");
+
+            // Add the "show" class to DIV
+            x.className = "show";
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+
+            window.location = '/x_159204_fb_Form Builder.do?form_id=' + form_id;
+        }
+
+        if (results[0].getAttribute('handler') == 'loadFormData') {
+            document.getElementById('form_desc').value = results[0].getAttribute("form_desc");
+            var fbEditor = document.getElementById("build-wrap");
+
+            var options = {
+                disabledActionButtons: ['data'],
+                dataType: 'json',
+                onSave: function(evt, form_data) {
+                    var form_desc = document.getElementById('form_desc').value;
+                    var ga = new GlideAjax('x_159204_fb.Data_Processor');
+                    ga.addParam('sysparm_name', 'saveFormData');
+                    ga.addParam('sysparm_form_data', form_data);
+                    ga.addParam('sysparm_form_desc', form_desc);
+
+                    ga.getXML(parseResults);
+                },
+                formData: results[0].getAttribute("form_data")
+            };
+
+            $(fbEditor).formBuilder(options);
+        }
+    }
+}
+
+function buildOptions() {
+    var options = {
+        disabledActionButtons: ['data'],
+        onSave: function(evt, form_data) {
+
+            var form_desc = document.getElementById('form_desc').value;
+
+            var ga = new GlideAjax('x_159204_fb.Data_Processor');
+            ga.addParam('sysparm_name', 'saveFormData');
+            ga.addParam('sysparm_form_data', form_data);
+            ga.addParam('sysparm_form_desc', form_desc);
+
+            ga.getXML(parseResults);
+        },
+		fields: [
+			{
+				label: 'Email',
+				type: 'text',
+				subtype: 'email',
+				icon: "✉"
+			},
+			{
+				label: 'Phone',
+				type: 'text',
+				subtype: 'phone',
+				icon: ''
+			}
+		],
+        inputSets: [{
+            label: 'Requester Details',
+            name: 'requester-details', // optional - one will be generated from the label if name not supplied
+            showHeader: true, // optional - Use the label as the header for this set of inputs
+            fields: [{
+                    type: 'text',
+                    label: 'Name',
+                    className: 'form-control'
+                },
+                {
+                    type: 'text',
+                    label: 'E-mail address',
+                    className: 'form-control'
+                },
+                {
+                    type: 'text',
+                    label: 'Phone number',
+                    className: 'form-control'
+                },
+            ]
+        }, ]
+    };
+
+    return options;
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_159204_fb_Form Builder.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<link href="d538f65bdb691010ab71f7af29961983.cssdbx?" rel="stylesheet" type="text/css" />
+	
+<g:evaluate>
+  var css = new GlideRecord("content_css");
+  css.addQuery("name", "fb-main.css");
+  css.query()
+  css.next();
+  var cssid = ""+css.sys_id;
+</g:evaluate>
+<link href="${cssid}.cssdbx?" rel="stylesheet" type="text/css" />
+	
+	<style>
+		body {
+			padding: 0;
+			margin: 10px 0;
+			background: #000;
+		}
+		
+		#frmb-1593365541413-save-action {
+			display: none;
+		}
+
+		.fb-header {
+			background: #ddd;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border: 2px solid #bbb;
+			padding: 3px;
+			padding-left: 6px;
+			color: #666;
+		}
+
+		.formDescDataWrap {
+			text-align: left;
+			margin-bottom: 10px;
+		}
+		
+		.section_header_div_no_scroll {
+			background: #eee;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border: 2px solid #ddd;
+			padding: 3px;
+			padding-left: 6px;
+			color: #666;
+		}
+		
+		.results {
+			margin-top: 60px;
+			background: #aaaaff;
+			border: 2px solid #ddd;
+		}
+			
+		#form_desc {
+			margin-left: 10px;
+			padding: 2px;
+			width: 500px;
+		}
+		
+		/* The snackbar - position it at the bottom and in the middle of the screen */
+		#snackbar {
+		  visibility: hidden; /* Hidden by default. Visible on click */
+		  min-width: 250px; /* Set a default minimum width */
+		  margin-left: -125px; /* Divide value of min-width by 2 */
+		  background-color: #333; /* Black background color */
+		  color: #fff; /* White text color */
+		  text-align: center; /* Centered text */
+		  border-radius: 2px; /* Rounded borders */
+		  padding: 16px; /* Padding */
+		  position: fixed; /* Sit on top of the screen */
+		  z-index: 1; /* Add a z-index if needed */
+		  left: 50%; /* Center the snackbar */
+		  bottom: 30px; /* 30px from the bottom */
+		}
+
+		/* Show the snackbar when clicking on a button (class added with JavaScript) */
+		#snackbar.show {
+		  visibility: visible; /* Show the snackbar */
+		  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+		  However, delay the fade out process for 2.5 seconds */
+		  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		}
+
+		/* Animations to fade the snackbar in and out */
+		@-webkit-keyframes fadein {
+		  from {bottom: 0; opacity: 0;}
+		  to {bottom: 30px; opacity: 1;}
+		}
+
+		@keyframes fadein {
+		  from {bottom: 0; opacity: 0;}
+		  to {bottom: 30px; opacity: 1;}
+		}
+
+		@-webkit-keyframes fadeout {
+		  from {bottom: 30px; opacity: 1;}
+		  to {bottom: 0; opacity: 0;}
+		}
+
+		@keyframes fadeout {
+		  from {bottom: 30px; opacity: 1;}
+		  to {bottom: 0; opacity: 0;}
+		}		
+		
+	</style>
+
+	<div class="section_header_div_no_scroll">
+		<div class="container-fluid">
+			<div class="navbar-header"><h4>Form Builder</h4></div>
+			<div class="navbar-right">
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="snackbar">Form saved!</div>	
+		
+	<div style="margin-top: 60px;">
+		<div class="formDescDataWrap">
+			<label for="form_desc">Form description: </label>			
+			<input type="text" name="form_desc" id="form_desc" class="input-control" />
+		</div>
+		<div id="build-wrap"></div>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
+	
+</j:jelly>]]></html>
+        <name>Form Builder</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-06-27 12:25:27</sys_created_on>
+        <sys_id>19c6361bdb691010ab71f7af299619ef</sys_id>
+        <sys_mod_count>240</sys_mod_count>
+        <sys_name>Form Builder</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_ui_page_19c6361bdb691010ab71f7af299619ef</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-06 03:06:58</sys_updated_on>
+    </sys_ui_page>
+</record_update>

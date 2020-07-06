@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Form Builder Forms" max_length="40" name="x_159204_fb_forms" sizeclass="26" type="collection">
+        <element label="Form Data" max_length="5000" name="form_data" type="string_full_utf8"/>
+        <element label="Name" max_length="50" name="name" type="string"/>
+        <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="owner"/>
+        </index>
+    </element>
+</database>
