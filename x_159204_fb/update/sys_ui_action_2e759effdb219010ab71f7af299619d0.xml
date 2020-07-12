@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name>sysverb_new</action_name>
-        <active>true</active>
+        <active>false</active>
         <client>false</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
@@ -28,7 +28,7 @@
         <name>New Form</name>
         <onclick>doit()</onclick>
         <order>100</order>
-        <script><![CDATA[action.setRedirectURL ('/x_159204_fb_Form Builder.do?fb=new');]]></script>
+        <script><![CDATA[//action.setRedirectURL ('/x_159204_fb_Form Builder.do?fb=new');]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -39,7 +39,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2e759effdb219010ab71f7af299619d0</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>New Form</sys_name>
         <sys_overrides/>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
@@ -47,7 +47,7 @@
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_ui_action_2e759effdb219010ab71f7af299619d0</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-06 01:54:51</sys_updated_on>
+        <sys_updated_on>2020-07-11 03:38:12</sys_updated_on>
         <table>x_159204_fb_forms</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>true</ui16_compatible>

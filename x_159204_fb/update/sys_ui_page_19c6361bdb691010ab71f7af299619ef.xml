@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
-        <client_script><![CDATA[/*
-Event.observe(window, "load", function() {
-    onLoad();
-});
-*/
-window.setTimeout(renderFormBuilder, 800);
+        <client_script><![CDATA[var form_id = '';
 
-function renderFormBuilder() {
+window.setTimeout(preload, 800);
+
+function preload() {
     var gUrl = new GlideURL();
     gUrl.setFromCurrent();
-    var form_id = gUrl.getParam("form_id");
+    form_id = gUrl.getParam("form_id");
 
     var fields = [{
         label: "Email",
@@ -25,68 +22,80 @@ function renderFormBuilder() {
     if (form_id) {
         var ga = new GlideAjax('x_159204_fb.Data_Processor');
         ga.addParam('sysparm_name', 'loadFormData');
-        ga.addParam('sysparm_form_sysid', form_id);
+        ga.addParam('sysparm_form_id', form_id);
 
-        ga.getXML(parseResults);
-    } else {
-        var fbEditor = document.getElementById("build-wrap");
-
-        var options = {
-            disabledActionButtons: ['data'],
-            onSave: function(evt, form_data) {
-                var form_desc = document.getElementById('form_desc').value;
-                var ga = new GlideAjax('x_159204_fb.Data_Processor');
-                ga.addParam('sysparm_name', 'saveFormData');
-                ga.addParam('sysparm_form_data', form_data);
-                ga.addParam('sysparm_form_desc', form_desc);
-
-                ga.getXML(parseResults);
-            },
-            inputSets: [{
-                label: 'Requester Details',
-                name: 'user-details', // optional - one will be generated from the label if name not supplied
-                showHeader: true, // optional - Use the label as the header for this set of inputs
-                fields: [{
-                        type: 'text',
-                        label: 'First Name',
-                        className: 'form-control'
-                    },
-                    {
-                        type: 'select',
-                        label: 'Profession',
-                        className: 'form-control',
-                        values: [{
-                                label: 'Street Sweeper',
-                                value: 'option-2',
-                                selected: false
-                            },
-                            {
-                                label: 'Brain Surgeon',
-                                value: 'option-3',
-                                selected: false
-                            }
-                        ]
-                    },
-                    {
-                        type: 'textarea',
-                        label: 'Short Bio:',
-                        className: 'form-control'
-                    }
-                ]
-            }, ]
-        };
-
-        $(fbEditor).formBuilder(buildOptions());
+        ga.getXML(renderForm);
     }
 }
 
-function parseResults(response) {
+function renderForm(response) {
+	
+	var results = response.responseXML.getElementsByTagName("result");
+	var form_data = results[0].getAttribute("form_data");
+	document.getElementById('form_desc').value = results[0].getAttribute("form_desc");
+	
+	var fbEditor = document.getElementById("build-wrap");
+	
+    var options = {
+        disabledActionButtons: ['data'],
+		formData: form_data,
+        onSave: function(evt, form_data) {
+
+            var form_desc = document.getElementById('form_desc').value;
+
+            var ga = new GlideAjax('x_159204_fb.Data_Processor');
+            ga.addParam('sysparm_name', 'saveFormData');
+            ga.addParam('sysparm_form_data', form_data);
+            ga.addParam('sysparm_form_desc', form_desc);
+			ga.addParam('sysparm_form_id', form_id);
+
+            ga.getXML(saveForm);
+        },
+		fields: [
+			{
+				label: 'Email',
+				type: 'text',
+				subtype: 'email',
+				icon: "✉"
+			},
+			{
+				label: 'Phone',
+				type: 'text',
+				subtype: 'phone',
+				icon: ''
+			}
+		],
+        inputSets: [{
+            label: 'Requester Details',
+            name: 'requester-details', // optional - one will be generated from the label if name not supplied
+            showHeader: true, // optional - Use the label as the header for this set of inputs
+            fields: [{
+                    type: 'text',
+                    label: 'Name',
+                    className: 'form-control'
+                },
+                {
+                    type: 'text',
+                    label: 'E-mail address',
+                    className: 'form-control'
+                },
+                {
+                    type: 'text',
+                    label: 'Phone number',
+                    className: 'form-control'
+                },
+            ]
+        }, ]
+    };
+	
+	$(fbEditor).formBuilder(options);
+}
+
+function saveForm(response) {
     var results = response.responseXML.getElementsByTagName("result");
 
     if (results) {
-        if (results[0].getAttribute('handler') == 'saveFormData') {
-            var form_id = results[0].getAttribute('form_id');
-
+        if (results[0].getAttribute('saved') == 'true') {
             var x = document.getElementById("snackbar");
 
             // Add the "show" class to DIV
@@ -97,36 +106,14 @@ function parseResults(response) {
                 x.className = x.className.replace("show", "");
             }, 3000);
 
-            window.location = '/x_159204_fb_Form Builder.do?form_id=' + form_id;
         }
-
-        if (results[0].getAttribute('handler') == 'loadFormData') {
-            document.getElementById('form_desc').value = results[0].getAttribute("form_desc");
-            var fbEditor = document.getElementById("build-wrap");
-
-            var options = {
-                disabledActionButtons: ['data'],
-                dataType: 'json',
-                onSave: function(evt, form_data) {
-                    var form_desc = document.getElementById('form_desc').value;
-                    var ga = new GlideAjax('x_159204_fb.Data_Processor');
-                    ga.addParam('sysparm_name', 'saveFormData');
-                    ga.addParam('sysparm_form_data', form_data);
-                    ga.addParam('sysparm_form_desc', form_desc);
-
-                    ga.getXML(parseResults);
-                },
-                formData: results[0].getAttribute("form_data")
-            };
-
-            $(fbEditor).formBuilder(options);
-        }
-    }
+	}
 }
 
 function buildOptions() {
     var options = {
         disabledActionButtons: ['data'],
+		formData: form_data,
         onSave: function(evt, form_data) {
 
             var form_desc = document.getElementById('form_desc').value;
@@ -135,6 +122,7 @@ function buildOptions() {
             ga.addParam('sysparm_name', 'saveFormData');
             ga.addParam('sysparm_form_data', form_data);
             ga.addParam('sysparm_form_desc', form_desc);
+			ga.addParam('sysparm_form_id', form_id);
 
             ga.getXML(parseResults);
         },
@@ -305,8 +293,10 @@ function buildOptions() {
 		
 	<div style="margin-top: 60px;">
 		<div class="formDescDataWrap">
-			<label for="form_desc">Form description: </label>			
-			<input type="text" name="form_desc" id="form_desc" class="input-control" />
+			<div>
+				<label for="form_desc">Form description: </label>
+				<input type="text" name="form_desc" id="form_desc" class="input-control" />
+			</div>
 		</div>
 		<div id="build-wrap"></div>
 	</div>
@@ -322,13 +312,13 @@ function buildOptions() {
         <sys_created_by>rpoore_admin</sys_created_by>
         <sys_created_on>2020-06-27 12:25:27</sys_created_on>
         <sys_id>19c6361bdb691010ab71f7af299619ef</sys_id>
-        <sys_mod_count>240</sys_mod_count>
+        <sys_mod_count>260</sys_mod_count>
         <sys_name>Form Builder</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy/>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_ui_page_19c6361bdb691010ab71f7af299619ef</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-06 03:06:58</sys_updated_on>
+        <sys_updated_on>2020-07-12 11:59:08</sys_updated_on>
     </sys_ui_page>
 </record_update>

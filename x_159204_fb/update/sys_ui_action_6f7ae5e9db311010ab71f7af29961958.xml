@@ -6,8 +6,10 @@
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
-        <comments>https://dev76398.service-now.com/nav_to.do?uri=%2Fui_page.do%3Fsys_id%3D19c6361bdb691010ab71f7af299619ef</comments>
-        <condition>current.form_data != ''  &amp;&amp; current.form_data != '[]'</condition>
+        <comments>https://dev76398.service-now.com/nav_to.do?uri=%2Fui_page.do%3Fsys_id%3D19c6361bdb691010ab71f7af299619ef&#13;
+&#13;
+current.form_data != ''  &amp;&amp; current.form_data != '[]'</comments>
+        <condition/>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -28,7 +30,11 @@
         <name>Edit Form</name>
         <onclick/>
         <order>100</order>
-        <script><![CDATA[action.setRedirectURL('/x_159204_fb_Form Builder.do?fb=edit&form_id=' + current.sys_id);]]></script>
+        <script><![CDATA[//var uri = action.getGlideURI();
+//uri.set('sysparm_form_id', current.sys_id);
+//uri.set('sys_id','-1');
+
+action.setRedirectURL('/x_159204_fb_Form Builder.do?form_id=' + current.sys_id);]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -39,7 +45,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6f7ae5e9db311010ab71f7af29961958</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Edit Form</sys_name>
         <sys_overrides/>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
@@ -47,7 +53,7 @@
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_ui_action_6f7ae5e9db311010ab71f7af29961958</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-06 01:55:23</sys_updated_on>
+        <sys_updated_on>2020-07-11 04:16:20</sys_updated_on>
         <table>x_159204_fb_forms</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

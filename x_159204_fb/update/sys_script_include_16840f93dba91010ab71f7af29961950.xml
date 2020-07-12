@@ -24,28 +24,15 @@ Data_Processor.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		gr.query();
 		
 		if (gr.next()) {
-			gr.name = form_desc;
+			gr.description = form_desc;
 			gr.form_data = form_data;
 			
 			if (gr.update()) {
-				gs.addInfoMessage('Form updated.');
+				result.setAttribute('saved', 'true');
 			}
 			else {
-				gs.addErrorMessage('Could not update form.');
+				result.setAttribute('saved', 'false');
 			}
-		}
-		else {
-			gr.initialize();
-			gr.name = form_desc;
-			gr.form_data = form_data;
-			var record_id = gr.insert();
-			
-			if (record_id) {			
-				result.setAttribute('form_id', record_id);			
-			}
-			else {
-				gs.addErrorMessage('Could not create new form.');
-			}			
 		}
     },
 
@@ -53,13 +40,13 @@ Data_Processor.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         var result = this.newItem('result');
         result.setAttribute('handler', 'loadFormData');
 
-        var form_id = this.getParameter('sysparm_form_sysid');
+        var form_id = this.getParameter('sysparm_form_id');
 
         var gr = new GlideRecord('x_159204_fb_forms');
         gr.get(form_id);
 
         if (gr) {
-            result.setAttribute('form_desc', gr.name.toString());
+            result.setAttribute('form_desc', gr.description.toString());
             result.setAttribute('form_data', gr.form_data.toString());
         }
 
@@ -71,13 +58,13 @@ Data_Processor.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>rpoore_admin</sys_created_by>
         <sys_created_on>2020-06-27 13:23:56</sys_created_on>
         <sys_id>16840f93dba91010ab71f7af29961950</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>Data_Processor</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_script_include_16840f93dba91010ab71f7af29961950</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-06 01:30:19</sys_updated_on>
+        <sys_updated_on>2020-07-11 19:20:10</sys_updated_on>
     </sys_script_include>
 </record_update>
