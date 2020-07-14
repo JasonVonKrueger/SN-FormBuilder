@@ -1,28 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="content_css">
     <content_css action="INSERT_OR_UPDATE">
         <name>fb-main.css</name>
-        <style>body {&#13;
-	padding: 0;&#13;
-	margin: 10px 0;&#13;
-	background: #000000;&#13;
-        background-color: #000000;&#13;
-}&#13;
-		&#13;
+        <style>&#13;
 #frmb-1593365541413-save-action {&#13;
-	display: none;&#13;
-}</style>
+  display: none;&#13;
+}&#13;
+&#13;
+.fb-header {&#13;
+  background: #ddd;&#13;
+  position: absolute;&#13;
+  top: 0px;&#13;
+  left: 0px;&#13;
+  border: 2px solid #bbb;&#13;
+  padding: 3px;&#13;
+  padding-left: 6px;&#13;
+  color: #666;&#13;
+}&#13;
+&#13;
+.formDescDataWrap {&#13;
+  text-align: left;&#13;
+  margin-bottom:  10px;&#13;
+}&#13;
+&#13;
+#build-wrap {&#13;
+&#13;
+}&#13;
+&#13;
+.section_header_div_no_scroll {&#13;
+  background: #eee;&#13;
+  position: absolute;&#13;
+  top: 0px;&#13;
+  left: 0px;&#13;
+  border: 2px solid #ddd;&#13;
+  padding: 3px;&#13;
+  padding-left: 6px;&#13;
+  color: #666;&#13;
+}&#13;
+&#13;
+.results {&#13;
+  margin-top: 60px;&#13;
+  background: #aaaaff;&#13;
+  border: 2px solid #ddd;&#13;
+}&#13;
+&#13;
+#form_desc {&#13;
+  margin-left: 10px;&#13;
+  padding: 2px;&#13;
+  width: 500px;&#13;
+}&#13;
+&#13;
+/* The snackbar - position it at the bottom and in the middle of the screen */&#13;
+#snackbar {&#13;
+  visibility: hidden; /* Hidden by default. Visible on click */&#13;
+  min-width: 250px; /* Set a default minimum width */&#13;
+  margin-left: -125px; /* Divide value of min-width by 2 */&#13;
+  background-color: #333; /* Black background color */&#13;
+  color: #fff; /* White text color */&#13;
+  text-align: center; /* Centered text */&#13;
+  border-radius: 2px; /* Rounded borders */&#13;
+  padding: 16px; /* Padding */&#13;
+  position: fixed; /* Sit on top of the screen */&#13;
+  z-index: 1; /* Add a z-index if needed */&#13;
+  left: 50%; /* Center the snackbar */&#13;
+  bottom: 30px; /* 30px from the bottom */&#13;
+}&#13;
+&#13;
+/* Show the snackbar when clicking on a button (class added with JavaScript) */&#13;
+#snackbar.show {&#13;
+  visibility: visible; /* Show the snackbar */&#13;
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.&#13;
+  However, delay the fade out process for 2.5 seconds */&#13;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;&#13;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;&#13;
+}&#13;
+&#13;
+/* Animations to fade the snackbar in and out */&#13;
+@-webkit-keyframes fadein {&#13;
+  from {bottom: 0; opacity: 0;}&#13;
+  to {bottom: 30px; opacity: 1;}&#13;
+}&#13;
+&#13;
+@keyframes fadein {&#13;
+  from {bottom: 0; opacity: 0;}&#13;
+  to {bottom: 30px; opacity: 1;}&#13;
+}&#13;
+&#13;
+@-webkit-keyframes fadeout {&#13;
+  from {bottom: 30px; opacity: 1;}&#13;
+  to {bottom: 0; opacity: 0;}&#13;
+}&#13;
+&#13;
+@keyframes fadeout {&#13;
+  from {bottom: 30px; opacity: 1;}&#13;
+  to {bottom: 0; opacity: 0;}&#13;
+}	</style>
         <sys_class_name>content_css</sys_class_name>
         <sys_created_by>rpoore_admin</sys_created_by>
         <sys_created_on>2020-06-27 12:30:52</sys_created_on>
         <sys_id>d538f65bdb691010ab71f7af29961983</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>fb-main.css</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy/>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>content_css_d538f65bdb691010ab71f7af29961983</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-04 16:39:16</sys_updated_on>
+        <sys_updated_on>2020-07-14 01:48:11</sys_updated_on>
         <type>local</type>
         <url/>
     </content_css>
