@@ -4,22 +4,13 @@
         <client_script><![CDATA[var form_id = '';
 
 // need to wait extra time for loading in order to get the request parameters
-window.setTimeout(preload, 800);
+window.setTimeout(preload, 500);
 
 function preload() {
     var gUrl = new GlideURL();
     gUrl.setFromCurrent();
     form_id = gUrl.getParam("form_id");
-
-    var fields = [{
-        label: "Email",
-        type: "text",
-        subtype: "email",
-        icon: "✉"
-    }];
-
-    //var formBuilder = $(fbEditor).formBuilder(fields);
-
+	
     if (form_id) {
         var ga = new GlideAjax('x_159204_fb.Data_Processor');
         ga.addParam('sysparm_name', 'loadFormData');
@@ -29,16 +20,22 @@ function preload() {
     }
 }
 
+
 function renderForm(response) {
-	
 	var results = response.responseXML.getElementsByTagName("result");
 	var form_data = results[0].getAttribute("form_data");
+	var custom_fields = JSON.parse(results[0].getAttribute("custom_fields"));
+	var disabled_field_attrs = results[0].getAttribute("disabled_field_attrs");
+	var input_sets = JSON.parse(results[0].getAttribute("input_sets"));
+
 	document.getElementById('form_desc').value = results[0].getAttribute("form_desc");
 	
 	var fbEditor = document.getElementById("build-wrap");
-	
+		
     var options = {
         disabledActionButtons: ['data'],
+		disableFields: ['autocomplete', 'file', 'hidden', 'paragraph'],
+		disabledAttrs: disabled_field_attrs,
 		formData: form_data,
         onSave: function(evt, form_data) {
 
@@ -52,41 +49,8 @@ function renderForm(response) {
 
             ga.getXML(saveForm);
         },
-		fields: [
-			{
-				label: 'Email',
-				type: 'text',
-				subtype: 'email',
-				icon: "✉"
-			},
-			{
-				label: 'Phone',
-				type: 'text',
-				subtype: 'phone',
-				icon: ''
-			}
-		],
-        inputSets: [{
-            label: 'Requester Details',
-            name: 'requester-details', // optional - one will be generated from the label if name not supplied
-            showHeader: true, // optional - Use the label as the header for this set of inputs
-            fields: [{
-                    type: 'text',
-                    label: 'Name',
-                    className: 'form-control'
-                },
-                {
-                    type: 'text',
-                    label: 'E-mail address',
-                    className: 'form-control'
-                },
-                {
-                    type: 'text',
-                    label: 'Phone number',
-                    className: 'form-control'
-                },
-            ]
-        }, ]
+        fields: custom_fields,		
+        inputSets: input_sets
     };
 	
 	$(fbEditor).formBuilder(options);
@@ -110,62 +74,7 @@ function saveForm(response) {
         }
 	}
 }
-
-function buildOptions() {
-    var options = {
-        disabledActionButtons: ['data'],
-		formData: form_data,
-        onSave: function(evt, form_data) {
-
-            var form_desc = document.getElementById('form_desc').value;
-
-            var ga = new GlideAjax('x_159204_fb.Data_Processor');
-            ga.addParam('sysparm_name', 'saveFormData');
-            ga.addParam('sysparm_form_data', form_data);
-            ga.addParam('sysparm_form_desc', form_desc);
-			ga.addParam('sysparm_form_id', form_id);
-
-            ga.getXML(parseResults);
-        },
-		fields: [
-			{
-				label: 'Email',
-				type: 'text',
-				subtype: 'email',
-				icon: "✉"
-			},
-			{
-				label: 'Phone',
-				type: 'text',
-				subtype: 'phone',
-				icon: ''
-			}
-		],
-        inputSets: [{
-            label: 'Requester Details',
-            name: 'requester-details', // optional - one will be generated from the label if name not supplied
-            showHeader: true, // optional - Use the label as the header for this set of inputs
-            fields: [{
-                    type: 'text',
-                    label: 'Name',
-                    className: 'form-control'
-                },
-                {
-                    type: 'text',
-                    label: 'E-mail address',
-                    className: 'form-control'
-                },
-                {
-                    type: 'text',
-                    label: 'Phone number',
-                    className: 'form-control'
-                },
-            ]
-        }, ]
-    };
-
-    return options;
-}]]></client_script>
+]]></client_script>
         <description/>
         <direct>false</direct>
         <endpoint>x_159204_fb_Form Builder.do</endpoint>
@@ -206,13 +115,13 @@ function buildOptions() {
         <sys_created_by>rpoore_admin</sys_created_by>
         <sys_created_on>2020-06-27 12:25:27</sys_created_on>
         <sys_id>19c6361bdb691010ab71f7af299619ef</sys_id>
-        <sys_mod_count>274</sys_mod_count>
+        <sys_mod_count>326</sys_mod_count>
         <sys_name>Form Builder</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy/>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_ui_page_19c6361bdb691010ab71f7af299619ef</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-14 01:37:51</sys_updated_on>
+        <sys_updated_on>2020-07-26 04:27:01</sys_updated_on>
     </sys_ui_page>
 </record_update>

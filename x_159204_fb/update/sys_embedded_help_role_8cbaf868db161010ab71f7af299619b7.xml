@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_159204_fb.field_attributes_user" name="x_159204_fb.field_attributes_user">c0baf464db161010ab71f7af299619b1</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-25 21:04:15</sys_created_on>
+        <sys_id>8cbaf868db161010ab71f7af299619b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c0baf464db161010ab71f7af299619b1</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_embedded_help_role_8cbaf868db161010ab71f7af299619b7</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-25 21:04:15</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>active</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Show icon message</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   g_form.showFieldMsg('icon', 'http://www.unicode.org/charts/PDF/U2700.pdf', 'info');
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-25 16:29:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c08b73d4db521010ab71f7af299619fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show icon message</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_script_client_c08b73d4db521010ab71f7af299619fe</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-25 16:29:52</sys_updated_on>
+        <table>x_159204_fb_custom_fields</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sys_script_client_c08b73d4db521010ab71f7af299619fe</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;active&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Show icon message&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+   g_form.showFieldMsg('icon', 'http://www.unicode.org/charts/PDF/U2700.pdf', 'info');
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;rpoore_admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-07-25 16:29:52&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;c08b73d4db521010ab71f7af299619fe&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Show icon message&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Form Builder" source="x_159204_fb"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Form Builder"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_c08b73d4db521010ab71f7af299619fe&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;rpoore_admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-07-25 16:29:52&lt;/sys_updated_on&gt;&lt;table&gt;x_159204_fb_custom_fields&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1864414403</payload_hash>
+        <record_name>Show icon message</record_name>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-25 16:29:52</sys_created_on>
+        <sys_id>b4ebf394db521010ab71f7af2996194a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17386cf31dd0000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-25 16:29:52</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>bcebf394eb521010b41681cb75998249</update_guid>
+        <update_guid_history>bcebf394eb521010b41681cb75998249:1864414403</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-25 16:31:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>2c197f9114a24824976434c6638d1811</sys_id>
+        <sys_metadata>c08b73d4db521010ab71f7af299619fe</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show icon message</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent display_value="Custom Fields">066d5933db421410ab71f7af299619df</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sys_script_client_c08b73d4db521010ab71f7af299619fe</sys_update_name>
+        <sys_update_version display_value="sys_script_client_c08b73d4db521010ab71f7af299619fe">b4ebf394db521010ab71f7af2996194a</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-25 16:31:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

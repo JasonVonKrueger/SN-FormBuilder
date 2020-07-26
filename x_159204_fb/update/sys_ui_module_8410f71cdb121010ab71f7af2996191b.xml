@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
     <sys_ui_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="Form Builder Forms">318572d7db691010ab71f7af2996191f</application>
+        <application display_value="Form Builder">4010f71cdb121010ab71f7af2996190c</application>
         <filter/>
-        <name>Forms</name>
+        <name>Input Sets</name>
         <order/>
         <path/>
         <path_relative_to_root>false</path_relative_to_root>
-        <roles>x_159204_fb.form_builder_forms_user</roles>
+        <roles>x_159204_fb.input_sets_user</roles>
         <sys_class_name>sys_ui_module</sys_class_name>
         <sys_created_by>rpoore_admin</sys_created_by>
-        <sys_created_on>2020-06-27 12:17:09</sys_created_on>
+        <sys_created_on>2020-07-25 15:38:12</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>fd8572d7db691010ab71f7af29961921</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>Forms</sys_name>
+        <sys_id>8410f71cdb121010ab71f7af2996191b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Input Sets</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy/>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
-        <sys_update_name>sys_ui_module_fd8572d7db691010ab71f7af29961921</sys_update_name>
+        <sys_update_name>sys_ui_module_8410f71cdb121010ab71f7af2996191b</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-07-14 00:20:03</sys_updated_on>
-        <table>x_159204_fb_forms</table>
+        <sys_updated_on>2020-07-25 15:38:12</sys_updated_on>
+        <table>x_159204_fb_input_sets</table>
         <uncancelable>false</uncancelable>
         <view_name/>
     </sys_ui_module>

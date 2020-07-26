@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="e2be9573db421410ab71f7af29961929" sys_domain="global" table="x_159204_fb_custom_fields" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>0</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>b2bcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>label</element>
+            <position>1</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>36bcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <position>2</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>b6bcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>3abcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>subtype</element>
+            <position>4</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>babcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>icon</element>
+            <position>5</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>3ebcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>class_name</element>
+            <position>6</position>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+            <sys_id>bebcf318db521010ab71f7af2996190d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>x_159204_fb_custom_fields</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-23 15:46:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e2be9573db421410ab71f7af29961929</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_159204_fb_custom_fields</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+            <sys_update_name>sys_ui_section_e2be9573db421410ab71f7af29961929</sys_update_name>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-23 15:46:17</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sys_ui_section_e2be9573db421410ab71f7af29961929</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="e2be9573db421410ab71f7af29961929" sys_domain="global" table="x_159204_fb_custom_fields" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>active</element><position>0</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>b2bcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>label</element><position>1</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>36bcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>type</element><position>2</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>b6bcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>3</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>3abcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>subtype</element><position>4</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>babcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>icon</element><position>5</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>3ebcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>class_name</element><position>6</position><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-25 16:33:33</sys_created_on><sys_id>bebcf318db521010ab71f7af2996190d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_159204_fb_custom_fields" sys_domain="global" view="Default view">e2be9573db421410ab71f7af29961929</sys_ui_section><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-25 16:33:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_159204_fb_custom_fields</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-23 15:46:17</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>e2be9573db421410ab71f7af29961929</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_159204_fb_custom_fields</sys_name><sys_overrides/><sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package><sys_policy/><sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope><sys_update_name>sys_ui_section_e2be9573db421410ab71f7af29961929</sys_update_name><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-23 15:46:17</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>-429663817</payload_hash>
+        <record_name>Custom Fields</record_name>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-25 16:33:33</sys_created_on>
+        <sys_id>3ebcf318db521010ab71f7af2996190f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17386d2931b0000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-25 16:33:33</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>f2bcf3188a52101013f106ffb5bcf40f</update_guid>
+        <update_guid_history>f2bcf3188a52101013f106ffb5bcf40f:-429663817,bd4bbf94b85210106105b0fd06f811d8:-1809979602,b9baf794af521010cf930cbd0b4b5708:-429663817,e43af35476521010b2d9bfd2f7196ee2:-323948912,4fb2edf39a421410fd6fedb611b8fca5:-704067541,3abedd736942141036f915956e7e8e91:776561339,2ebedd73fe4214104faf5236a12f628b:2047668712</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-25 16:33:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>69e381453b66498692071dfb2a46bc24</sys_id>
+        <sys_metadata>e2be9573db421410ab71f7af29961929</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_159204_fb_custom_fields</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent display_value="Custom Fields">066d5933db421410ab71f7af299619df</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sys_ui_section_e2be9573db421410ab71f7af29961929</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_e2be9573db421410ab71f7af29961929">3ebcf318db521010ab71f7af2996190f</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-25 16:33:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

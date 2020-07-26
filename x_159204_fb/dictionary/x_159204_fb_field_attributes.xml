@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Field Attributes" max_length="40" name="x_159204_fb_field_attributes" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+    </element>
+</database>

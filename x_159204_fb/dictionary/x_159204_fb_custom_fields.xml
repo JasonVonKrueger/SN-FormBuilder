@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Custom Fields" max_length="40" name="x_159204_fb_custom_fields" sizeclass="2" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element choice="1" default="form-control" label="Class name" max_length="40" name="class_name" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="form-control" value="form-control"/>
+            </choice>
+        </element>
+        <element label="Icon" max_length="15" name="icon" type="string_full_utf8"/>
+        <element display="true" label="Label" max_length="40" name="label" type="string"/>
+        <element label="Subtype" max_length="40" name="subtype" type="string"/>
+        <element choice="1" default="text" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Text" value="text"/>
+            </choice>
+        </element>
+    </element>
+</database>
