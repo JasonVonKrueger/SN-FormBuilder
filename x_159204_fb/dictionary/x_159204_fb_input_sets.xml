@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Input Sets" max_length="40" name="x_159204_fb_input_sets" sizeclass="1" type="collection">
-        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
-        <element label="Fields" max_length="4000" name="fields" reference="x_159204_fb_input_set_fields" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="glide_list"/>
-        <element label="Label" max_length="40" name="label" type="string"/>
-        <element display="true" label="Name" max_length="40" name="name" type="string"/>
-        <element default="true" label="Show Header" max_length="40" name="show_header" type="boolean"/>
-    </element>
-</database>
