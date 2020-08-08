@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var form_id = '';
+
+// need to wait extra time for loading in order to get the request parameters
+window.setTimeout(preload, 500);
+
+function preload() {
+    var gUrl = new GlideURL();
+    gUrl.setFromCurrent();
+    form_id = gUrl.getParam("form_id");
+	
+    if (form_id) {
+        var ga = new GlideAjax('x_159204_fb.Data_Processor');
+        ga.addParam('sysparm_name', 'loadFormData');
+        ga.addParam('sysparm_form_id', form_id);
+
+        ga.getXML(renderForm);
+    }
+}
+
+function renderForm(response) {
+	var results = response.responseXML.getElementsByTagName("result");
+	var form_data = results[0].getAttribute("form_data");
+	var control_position = results[0].getAttribute("control_position");
+	var custom_fields = JSON.parse(results[0].getAttribute("custom_fields"));
+	var disabled_field_attrs = results[0].getAttribute("disabled_field_attrs");
+	var input_sets = JSON.parse(results[0].getAttribute("input_sets"));	
+	var custom_field_attrs = buildCustomFieldAttrs();
+
+	// controlOrder seems to be picky so we need to force it to an array
+	var control_order = results[0].getAttribute("control_order");
+	control_order = control_order.split(',');
+
+	document.getElementById('form_desc').value = results[0].getAttribute("form_desc");
+	
+	var fbEditor = document.getElementById("build-wrap");
+		
+    var options = {
+		controlOrder: control_order,
+		controlPosition: control_position,
+        disabledActionButtons: ['data'],
+		disableFields: ['autocomplete', 'file', 'hidden', 'paragraph'],
+		disabledAttrs: disabled_field_attrs,
+		formData: form_data,
+		i18n: {
+			override: {
+				'en-US': {
+					getStarted: 'Drag and drop a field here!',
+				}
+			}
+		},
+        onSave: function(evt, form_data) {
+
+            var form_desc = document.getElementById('form_desc').value;
+
+            var ga = new GlideAjax('x_159204_fb.Data_Processor');
+            ga.addParam('sysparm_name', 'saveFormData');
+            ga.addParam('sysparm_form_data', form_data);
+            ga.addParam('sysparm_form_desc', form_desc);
+			ga.addParam('sysparm_form_id', form_id);
+
+            ga.getXML(saveForm);
+        },
+        fields: custom_fields,		
+        inputSets: input_sets,
+		typeUserAttrs: custom_field_attrs
+    };
+	
+	$(fbEditor).formBuilder(options);
+}
+
+function saveForm(response) {
+    var results = response.responseXML.getElementsByTagName("result");
+
+    if (results) {
+        if (results[0].getAttribute('saved') == 'true') {
+            var x = document.getElementById("snackbar");
+
+            // Add the "show" class to DIV
+            x.className = "show";
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+
+        }
+	}
+}
+
+// Used to add custom attributes to the built-in form fields
+function buildCustomFieldAttrs() {
+	var typeUserAttrs = {
+		text: {
+			desc: {
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			}
+		},
+		select: {
+			desc: {
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			}
+		},
+		number: {
+			desc: {
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			}
+		},
+		date: {
+			desc: {
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			}
+		},
+		textarea: {
+			desc: {
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			}
+		},
+		paragraph: {
+			desc: {
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			}
+		},		
+	};
+	
+	return typeUserAttrs;
+}
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_159204_fb_Form Builder.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">	
+	
+	<link href="d538f65bdb691010ab71f7af29961983.cssdbx?v=${gs.getProperty('glide.builddate')}" type="text/css" rel="stylesheet"/>
+
+	<div class="section_header_div_no_scroll">
+		<div class="container-fluid">
+			<div class="navbar-header"><h4>Form Builder</h4></div>
+			<div class="navbar-right">
+				<!-- this spot intentially left blank for now -->
+			</div>
+		</div>
+	</div>
+	
+	<div id="snackbar">Form saved!</div>	
+		
+	<div style="margin-top: 60px;">
+		<div class="formDescDataWrap">
+			<div>
+				<label for="form_desc">Form description: </label>
+				<input type="text" name="form_desc" id="form_desc" class="input-control" />
+			</div>
+		</div>
+		<div id="build-wrap"></div>
+	</div>
+	
+	<script language="javascript" src="x_159204_fb.jquery.min.js.jsdbx" />
+	<script language="javascript" src="x_159204_fb.jquery-ui.min.js.jsdbx" />
+	<script language="javascript" src="x_159204_fb.form-builder.min.js.jsdbx" />
+	
+</j:jelly>]]></html>
+        <name>Form Builder</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-06-27 12:25:27</sys_created_on>
+        <sys_id>19c6361bdb691010ab71f7af299619ef</sys_id>
+        <sys_mod_count>387</sys_mod_count>
+        <sys_name>Form Builder</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_ui_page_19c6361bdb691010ab71f7af299619ef</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-08-03 01:52:52</sys_updated_on>
+    </sys_ui_page>
+</record_update>

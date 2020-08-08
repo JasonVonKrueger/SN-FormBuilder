@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_159204_fb.Data_Processor</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>Data_Processor</name>
+        <script><![CDATA[var Data_Processor = Class.create();
+
+Data_Processor.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    saveFormData: function() {
+		var result = this.newItem('result');
+        result.setAttribute('handler', 'saveFormData');	
+		
+        var form_data = this.getParameter('sysparm_form_data');
+        var form_desc = this.getParameter('sysparm_form_desc');
+		var form_id = this.getParameter('sysparm_form_id');
+
+        var gr = new GlideRecord('x_159204_fb_forms');
+		gr.addQuery('sys_id', form_id);
+		gr.query();
+		
+		if (gr.next()) {
+			gr.description = form_desc;
+			gr.form_data = form_data;
+			
+			if (gr.update()) {
+				result.setAttribute('saved', 'true');
+			}
+			else {
+				result.setAttribute('saved', 'false');
+			}
+		}
+    },
+
+    loadFormData: function() {		
+        var result = this.newItem('result');
+        result.setAttribute('handler', 'loadFormData');
+
+        var form_id = this.getParameter('sysparm_form_id');
+
+        var gr = new GlideRecord('x_159204_fb_forms');
+        gr.get(form_id);
+
+        if (gr) {			
+            result.setAttribute('form_desc', gr.description.toString());
+            result.setAttribute('form_data', gr.form_data.toString());
+			result.setAttribute('control_position', gr.control_position.toString());
+        }
+		
+		// get custom fields
+		var custom_fields = this._getCustomFields();
+		if (custom_fields) {
+			result.setAttribute('custom_fields', JSON.stringify(custom_fields));
+		}
+		
+		// get disabled field attributes
+		var disabled_field_attrs = this._getDisabledFieldAttrs();
+		if (disabled_field_attrs) {
+			result.setAttribute('disabled_field_attrs', disabled_field_attrs);
+		}	
+		
+		// get input sets
+		var input_sets = this._getInputSets();
+		if (input_sets) {
+			result.setAttribute('input_sets', JSON.stringify(input_sets));
+		}	
+		
+		// get input set name for order....they go on top
+		var control_order = this._getInputSetforOrder();
+		if (control_order) {
+			result.setAttribute('control_order', control_order);
+		}		
+    },
+	
+	_getCustomFields: function() {
+		var response = [];
+		var gr = new GlideRecord('x_159204_fb_custom_fields');
+		gr.addQuery('active', true);		
+		gr.query();
+		
+		while (gr.next()) {
+			var o = {};
+			o.type = gr.type.toString();
+			o.subtype = gr.subtype.toString();
+			o.label = gr.label.toString();
+			
+			// make the icon a little bigger....
+			o.icon = '<span style="font-size: 14pt;">' + gr.icon.toString() + '</span>';
+			
+			response.push(o);
+		}
+		
+		return response;
+	},
+	
+	_getInputSets: function() {
+		var response = [];
+		var gr = new GlideRecord('x_159204_fb_input_sets');
+		gr.addQuery('active', true);
+		gr.query();
+		
+		while (gr.next()) {
+			var o = {};
+			o.label = gr.label.toString();
+			o.name = gr.name.toString();
+			o.showHeader = gr.show_header.toString();
+			o.fields = this._getInputSetFields(gr.fields);
+			//o.className = 'header';
+			//o.type = 'header';
+            //o.subtype = 'h3';			
+			
+			// make the icon a little bigger....
+			o.icon = '<span style="font-size: 14pt;">' + gr.icon.toString() + '</span>';	
+			
+			response.push(o);
+		}
+		
+		return response;
+	},	
+	
+	_getInputSetFields: function(fields) {
+		var response = [];
+		var gr = new GlideRecord('x_159204_fb_input_set_fields');		
+		gr.addEncodedQuery('sys_idIN' + fields);		
+		gr.query();
+
+		while (gr.next()) {
+			var o = {};
+			o.label = gr.label.toString();
+			o.type = gr.type.toString();
+			o.className = gr.class_name.toString();
+
+			response.push(o);
+		}
+
+		return response;		
+	},	
+	
+	_getInputSetforOrder: function() {
+		var response = [];
+		var gr = new GlideRecord('x_159204_fb_input_sets');
+		gr.addQuery('active', true);
+		gr.query();
+		
+		while (gr.next()) {
+			response.push(gr.name.toString());
+		}
+		
+		return response;
+	},		
+	
+	_getDisabledFieldAttrs: function() {
+		var response = [];
+		var gr = new GlideRecord('x_159204_fb_field_attributes');
+		gr.addQuery('active', false);
+		gr.query();
+		
+		while (gr.next()) {
+			response.push(gr.name.toString());
+		}
+		
+		return response;
+	},	
+
+    type: 'Data_Processor'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-06-27 13:23:56</sys_created_on>
+        <sys_id>16840f93dba91010ab71f7af29961950</sys_id>
+        <sys_mod_count>122</sys_mod_count>
+        <sys_name>Data_Processor</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_script_include_16840f93dba91010ab71f7af29961950</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-08-01 02:29:47</sys_updated_on>
+    </sys_script_include>
+</record_update>
