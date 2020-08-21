@@ -4,7 +4,7 @@
         <client_script><![CDATA[var form_id = '';
 
 // need to wait extra time for loading in order to get the request parameters
-window.setTimeout(preload, 500);
+window.setTimeout(preload, 250);
 
 function preload() {
     var gUrl = new GlideURL();
@@ -36,13 +36,17 @@ function renderForm(response) {
 	document.getElementById('form_desc').value = results[0].getAttribute("form_desc");
 	
 	var fbEditor = document.getElementById("build-wrap");
-		
+	
     var options = {
 		controlOrder: control_order,
 		controlPosition: control_position,
-        disabledActionButtons: ['data'],
+		sortableControls: true,
+        disabledActionButtons: ['data', 'clear', 'save'],
 		disableFields: ['autocomplete', 'file', 'hidden', 'paragraph'],
 		disabledAttrs: disabled_field_attrs,
+        fields: custom_fields,		
+        inputSets: input_sets,
+		typeUserAttrs: custom_field_attrs,		
 		formData: form_data,
 		i18n: {
 			override: {
@@ -50,25 +54,35 @@ function renderForm(response) {
 					getStarted: 'Drag and drop a field here!',
 				}
 			}
-		},
-        onSave: function(evt, form_data) {
-
-            var form_desc = document.getElementById('form_desc').value;
-
-            var ga = new GlideAjax('x_159204_fb.Data_Processor');
-            ga.addParam('sysparm_name', 'saveFormData');
-            ga.addParam('sysparm_form_data', form_data);
-            ga.addParam('sysparm_form_desc', form_desc);
-			ga.addParam('sysparm_form_id', form_id);
-
-            ga.getXML(saveForm);
-        },
-        fields: custom_fields,		
-        inputSets: input_sets,
-		typeUserAttrs: custom_field_attrs
+		}
     };
 	
-	$(fbEditor).formBuilder(options);
+	var formBuilder = $(fbEditor).formBuilder(options);
+	
+	// handle preview
+	document.getElementById('showPreview').addEventListener('click', function() {
+		showPreview(formBuilder.actions.getData('json'));
+	});	
+	
+	// handle clear
+	document.getElementById('clearStage').addEventListener('click', function() {
+		formBuilder.actions.clearFields();
+	});	
+	
+	// handle save
+	document.getElementById('saveForm').addEventListener('click', function() {
+		var form_data = formBuilder.actions.getData('json');
+		var form_desc = document.getElementById('form_desc').value;
+
+		var ga = new GlideAjax('x_159204_fb.Data_Processor');
+		ga.addParam('sysparm_name', 'saveFormData');
+		ga.addParam('sysparm_form_data', form_data);
+		ga.addParam('sysparm_form_desc', form_desc);
+		ga.addParam('sysparm_form_id', form_id);
+
+		ga.getXML(saveForm);		
+	});		
+	
 }
 
 function saveForm(response) {
@@ -100,6 +114,23 @@ function buildCustomFieldAttrs() {
 				placeholder: 'Describe the purpose of this field...'
 			}
 		},
+		reference: {
+			attrs: {
+			  type: 'select'
+			},			
+			desc: {
+				type: 'select',
+				label: 'Description',
+				value: '',
+				placeholder: 'Describe the purpose of this field...'
+			},
+			table: {
+				type: 'select',
+				label: 'Table',
+				value: '',
+				placeholder: 'ServiceNow table...'
+			}
+		},		
 		select: {
 			desc: {
 				label: 'Description',
@@ -139,6 +170,29 @@ function buildCustomFieldAttrs() {
 	
 	return typeUserAttrs;
 }
+
+function showPreview(formData) {	
+	
+	var formRenderOpts = {
+		dataType: 'json',
+		formData: formData
+	};
+	var renderContainer = $('<form/>');
+	
+	renderContainer.formRender(formRenderOpts);
+
+	var html = '<!doctype html><title>Form Preview</title><body class="container"><h1>Preview</h1><hr><form><div class="form-group">' + renderContainer.html() + '</div></form></body></html>';
+	var formPreviewWindow = window.open('', 'formPreview', 'height=480,width=640,toolbar=no,scrollbars=yes');
+
+	formPreviewWindow.document.write(html);
+	var style = document.createElement('link');
+	style.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+	style.setAttribute('rel', 'stylesheet');
+	style.setAttribute('type', 'text/css');
+	formPreviewWindow.document.head.appendChild(style);
+	
+}
+
 ]]></client_script>
         <description/>
         <direct>false</direct>
@@ -151,8 +205,14 @@ function buildCustomFieldAttrs() {
 	<div class="section_header_div_no_scroll">
 		<div class="container-fluid">
 			<div class="navbar-header"><h4>Form Builder</h4></div>
-			<div class="navbar-right">
-				<!-- this spot intentially left blank for now -->
+				
+			<div class="navbar-right">								
+				<div class="setDataWrap">
+					Short description: <input type="text" name="form_desc" id="form_desc" />	
+					<button id="saveForm" type="button" class="form_action_button header action_context btn btn-default">Save</button>	
+					<button id="showPreview" type="button" class="form_action_button header action_context btn btn-default">Preview</button>					
+					<button id="clearStage" type="button" class="form_action_button header action_context btn btn-default">Clear Stage</button>
+				</div>					
 			</div>
 		</div>
 	</div>
@@ -161,17 +221,15 @@ function buildCustomFieldAttrs() {
 		
 	<div style="margin-top: 60px;">
 		<div class="formDescDataWrap">
-			<div>
-				<label for="form_desc">Form description: </label>
-				<input type="text" name="form_desc" id="form_desc" class="input-control" />
-			</div>
+						
 		</div>
-		<div id="build-wrap"></div>
+		<div id="build-wrap"></div>	
 	</div>
 	
 	<script language="javascript" src="x_159204_fb.jquery.min.js.jsdbx" />
 	<script language="javascript" src="x_159204_fb.jquery-ui.min.js.jsdbx" />
 	<script language="javascript" src="x_159204_fb.form-builder.min.js.jsdbx" />
+	<script language="javascript" src="x_159204_fb.form-render.min.js.jsdbx" />
 	
 </j:jelly>]]></html>
         <name>Form Builder</name>
@@ -180,13 +238,13 @@ function buildCustomFieldAttrs() {
         <sys_created_by>rpoore_admin</sys_created_by>
         <sys_created_on>2020-06-27 12:25:27</sys_created_on>
         <sys_id>19c6361bdb691010ab71f7af299619ef</sys_id>
-        <sys_mod_count>387</sys_mod_count>
+        <sys_mod_count>497</sys_mod_count>
         <sys_name>Form Builder</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy/>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_ui_page_19c6361bdb691010ab71f7af299619ef</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-08-03 01:52:52</sys_updated_on>
+        <sys_updated_on>2020-08-21 01:20:51</sys_updated_on>
     </sys_ui_page>
 </record_update>

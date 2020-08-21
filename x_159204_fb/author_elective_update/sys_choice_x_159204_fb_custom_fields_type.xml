@@ -8,16 +8,35 @@
             <label>Text</label>
             <language>en</language>
             <name>x_159204_fb_custom_fields</name>
-            <sequence/>
+            <sequence>0</sequence>
             <sys_created_by>rpoore_admin</sys_created_by>
             <sys_created_on>2020-07-23 15:48:11</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>791f15b3db421410ab71f7af299619df</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-08-09 04:17:30</sys_updated_on>
+            <value>text</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Select</label>
+            <language>en</language>
+            <name>x_159204_fb_custom_fields</name>
+            <sequence>1</sequence>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-08-09 04:17:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3e142249db6a5010ab71f7af2996191e</sys_id>
             <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>rpoore_admin</sys_updated_by>
-            <sys_updated_on>2020-07-23 15:48:16</sys_updated_on>
-            <value>text</value>
+            <sys_updated_on>2020-08-09 04:17:40</sys_updated_on>
+            <value>select</value>
         </sys_choice>
         <sys_choice_set action="INSERT_OR_UPDATE">
             <element>type</element>
