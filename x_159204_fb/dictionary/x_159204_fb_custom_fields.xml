@@ -4,6 +4,7 @@
         <element choice="1" default="form-control" label="Class name" max_length="40" name="class_name" type="choice">
             <choice>
                 <element inactive_on_update="false" label="form-control" value="form-control"/>
+                <element inactive_on_update="false" label="form-control form-control-sm" value="form-control form-control-sm"/>
             </choice>
         </element>
         <element label="Icon" max_length="5" name="icon" type="string_full_utf8"/>
@@ -13,6 +14,7 @@
             <choice>
                 <element inactive_on_update="false" label="Text" sequence="0" value="text"/>
                 <element inactive_on_update="false" label="Select" sequence="1" value="select"/>
+                <element inactive_on_update="false" label="Grid" sequence="2" value="Grid"/>
             </choice>
         </element>
     </element>

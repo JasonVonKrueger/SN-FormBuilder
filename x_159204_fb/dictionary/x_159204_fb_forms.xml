@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Form Builder Forms" max_length="40" name="x_159204_fb_forms" sizeclass="9" type="collection">
+    <element label="Form Builder Forms" max_length="40" name="x_159204_fb_forms" sizeclass="10" type="collection">
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <element choice="3" default="left" label="Control Position" max_length="40" name="control_position" type="choice">
             <choice>

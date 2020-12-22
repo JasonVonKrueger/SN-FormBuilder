@@ -19,7 +19,7 @@
             <sys_updated_on>2020-07-31 19:24:07</sys_updated_on>
             <value>input_set_field</value>
         </sys_choice>
-        <sys_choice_set action="INSERT_OR_UPDATE">
+        <sys_choice_set action="DELETE">
             <element>field_scope</element>
             <name>x_159204_fb_fields</name>
             <sys_class_name>sys_choice_set</sys_class_name>

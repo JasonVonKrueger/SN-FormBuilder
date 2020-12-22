@@ -54,7 +54,7 @@ function renderForm(response) {
 					getStarted: 'Drag and drop a field here!',
 				}
 			}
-		}
+		},	
     };
 	
 	var formBuilder = $(fbEditor).formBuilder(options);
@@ -201,7 +201,7 @@ function showPreview(formData) {
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">	
 	
 	<link href="d538f65bdb691010ab71f7af29961983.cssdbx?v=${gs.getProperty('glide.builddate')}" type="text/css" rel="stylesheet"/>
-
+		
 	<div class="section_header_div_no_scroll">
 		<div class="container-fluid">
 			<div class="navbar-header"><h4>Form Builder</h4></div>
@@ -218,11 +218,9 @@ function showPreview(formData) {
 	</div>
 	
 	<div id="snackbar">Form saved!</div>	
-		
+			
 	<div style="margin-top: 60px;">
-		<div class="formDescDataWrap">
-						
-		</div>
+		<div class="formDescDataWrap"></div>
 		<div id="build-wrap"></div>	
 	</div>
 	
@@ -238,13 +236,13 @@ function showPreview(formData) {
         <sys_created_by>rpoore_admin</sys_created_by>
         <sys_created_on>2020-06-27 12:25:27</sys_created_on>
         <sys_id>19c6361bdb691010ab71f7af299619ef</sys_id>
-        <sys_mod_count>497</sys_mod_count>
+        <sys_mod_count>510</sys_mod_count>
         <sys_name>Form Builder</sys_name>
         <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
         <sys_policy/>
         <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
         <sys_update_name>sys_ui_page_19c6361bdb691010ab71f7af299619ef</sys_update_name>
         <sys_updated_by>rpoore_admin</sys_updated_by>
-        <sys_updated_on>2020-08-21 01:20:51</sys_updated_on>
+        <sys_updated_on>2020-08-23 21:05:18</sys_updated_on>
     </sys_ui_page>
 </record_update>
