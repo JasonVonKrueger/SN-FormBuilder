@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Form Fields" max_length="40" name="x_159204_fb_form_fields" sizeclass="7" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" default="field" label="Class" max_length="40" name="class" type="string"/>
+        <element default="&lt;!-- modify accordingly --&gt;&#13;&#10;&lt;div class=&quot;dropped-field-header&quot;&gt;Text&lt;/div&gt;&#13;&#10;&lt;div&gt;&#13;&#10;&lt;input type=&quot;text&quot; placeholder=&quot;Enter a value&quot;/&gt;&#13;&#10;&lt;/div&gt;" label="HTML Template" max_length="1024" name="html_template" type="string"/>
+        <element label="Label" max_length="64" name="label" type="string"/>
+        <element label="Name" max_length="64" name="name" type="string"/>
+        <element default="100" label="Order" max_length="40" name="order" type="integer"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Single-line Input" sequence="1" value="0"/>
+                <element inactive_on_update="false" label="Multi-line Input" sequence="2" value="1"/>
+                <element inactive_on_update="false" label="Choice" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Checkbox" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Date" sequence="5" value="4"/>
+                <element inactive_on_update="false" label="Button" sequence="6" value="5"/>
+                <element inactive_on_update="false" label="Custom" sequence="100" value="100"/>
+            </choice>
+        </element>
+    </element>
+</database>

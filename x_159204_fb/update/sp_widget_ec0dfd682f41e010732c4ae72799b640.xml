@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+	/* widget controller */
+		
+	var c = this;
+	var currently_selected = null;
+	var stageElements = {};
+	
+	c.propertySheet = document.getElementById('propertySheet');
+	c.fields = JSON.parse(c.data.formfields);
+
+	// unique ID for field names
+	createID = function() {
+		return Date.now().toString(36) + Math.random().toString(36).substr(2);
+	}	
+	
+	// render field
+	renderField = function(target, field) {
+		var uid = createID();
+		var droppedEl = document.createElement('div');
+		droppedEl.id = uid;
+		droppedEl.classList.add('dropped-field'); 
+		
+		var html = null;
+		for (i=0; i<c.fields.length; i++) {
+			if (c.fields[i].name === field) {
+				
+				// if checkbox (2) or choice (), show the options
+				if (c.fields[i].type === 2) {
+					document.getElementById('optionsPanel').className = 'show';
+				}
+				//else c.showOptions = false;
+				
+				html = c.fields[i].templ_html;
+				
+				var o = {};
+				o.type = c.fields[i].type;
+				o.name = c.fields[i].name;
+				o.label = c.fields[i].label;
+				o.required = false;
+
+				stageElements[uid] = o;
+				
+				c.formData = JSON.stringify(stageElements);
+			}
+		}
+		
+		target.appendChild(droppedEl);		
+		document.getElementById(uid).innerHTML += html;
+	}	
+	
+	// listen for stage clicks to select dropped elements
+	stage.addEventListener('click', function(e) {
+		if (currently_selected) {
+			currently_selected.classList.remove('selected');
+		}
+
+		var element = document.getElementById(e.target.id);
+		element.classList.add('selected');
+		currently_selected = element;
+
+		c.psFieldID = e.target.id;
+		
+		// show property sheet
+		var ps = document.getElementById('propertySheet');
+		ps.className = 'show';
+	});		
+	
+	var ps = document.getElementById('propertySheet');
+	ps.addEventListener('show', function(e) {	
+		alert('yo');
+	});
+	
+	/********************************************
+	* Click handlers
+	*////////////////////////////////////////////
+	
+	c.psApply = function(event) {
+		var newLabel = document.getElementById('psLabelText').value;
+		var kids = document.getElementById(c.psFieldID).childNodes;
+		kids[0].innerHTML = newLabel;
+
+		
+		// dropped-field-header
+	}	
+	
+	c.psCancel = function(event) {
+		c.propertySheet.className = 'hide';
+	}	
+	
+	c.psDelete = function(event) {
+		var elementToDelete = document.getElementById(c.psFieldID);
+		elementToDelete.remove();
+		
+		c.propertySheet.className = 'hide';
+	}	
+
+	/********************************************
+	* Drag handlers
+	*////////////////////////////////////////////	
+
+	c.dragStart = function(event) {
+		c.draggedNode = event.target.id;
+		event.dataTransfer.setData("id", event.target.id);
+	};
+
+	c.dragOver = function(event) {
+		event.preventDefault();
+		event.dataTransfer.dropEffect = "copy";
+		event.currentTarget.style.background = "#f0f3f4";
+	};	
+
+	c.drop = function(event) {
+		event.preventDefault();
+		event.currentTarget.style.background = "#fff";
+
+		var id = c.draggedNode; //event.dataTransfer.getData("id");
+		//event.target.appendChild(document.getElementById(id));
+	
+		renderField(event.target, id);
+				
+		event.dataTransfer.clearData();
+		$scope.$apply();
+	};
+
+	c.dragEnd = function(event) {
+		event.dataTransfer.clearData();
+	};
+
+};
+
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+}
+
+#formBuilder {
+	width: 80vw;
+  height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #999999;
+  spadding: 8px;
+  box-sizing: border-box;
+}
+
+/* Style the header */
+.header {
+  background-color: #3a3f51;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 2.5em;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #ddd;
+  color: #000;
+  spadding: 14px 16px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #666;
+  text-align: center;
+  text-decoration: none;
+}
+
+.topnav input {
+	width: 250px; 
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+button {
+	color: #333; 
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* right column */
+.column.right {
+  width: 25%;
+}
+
+/* Left column */
+.column.left {
+  width: 20%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 55%;
+  height: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Stage and dropped fields */
+#stage {
+  position: relative;
+  background-color: #fff;
+  border: 2px dashed #999999;
+  padding: 8px;
+  min-height: 500px;
+}	
+
+.dropped-field {
+  position: relative;
+	cursor: pointer;
+  height: auto;
+	background-color: #fcfcfc;
+	width: 100%;
+	padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+	box-shadow: rgba( 0, 0, 0, 0.3 ) 0px 0px 1px 1px;  
+}
+
+.dropped-field input[type=text] {
+	width: 100%; 
+}
+
+.dropped-field:hover {
+  border: 1px solid #1111ff;
+}
+
+.dropped-field.selected {
+  border: 2px solid #2222ff;
+}
+
+.dropped-field-header {
+  font-weight: bold;
+  font-size: 1.20em;
+}
+
+/* Draggable fields */
+.field {
+	cursor: grabbing;
+	background: #fcfcfc;
+	width: 90%;
+	max-width: 90%;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: 10px;
+	box-shadow: rgba( 0, 0, 0, 0.3 ) 0px 0px 1px 1px;
+
+}
+
+.field * {
+	cursor: grabbing;
+}
+
+.field:hover {
+  border: 1px solid #666;
+}
+
+/* 2 column container */
+.grid-container-2col {
+  position: relative;
+  display: flex;
+	cursor: grabbing;
+	background: #fcfcfc;  
+  width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.col {
+  flex: 1;
+  border: 1px dashed #999999;
+  padding: 2px;
+  height: 80px;
+}
+
+/* property sheet */
+#propertySheet {
+  display: none;
+}
+
+/* options panel */
+#optionsPanel {
+	display: none; 
+}
+
+
+/*
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');	
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&amp;family=Luckiest+Guy&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&amp;display=swap');
+
+body {
+  Xfont-family: 'Raleway';
+  Xfont-size: .8rem;
+  Xbackground-color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#title {
+  display: none;
+	Xposition: absolute;
+  height: 50px;
+  width: 100%;
+  padding: 5px;
+  background-color: #3a3f51;
+  color: #fff;
+  font-size: 36px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#appContainerGrid {
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #999999;
+  width: 75%;
+  height: 750px; 
+}
+
+#fieldscontainer {
+  position: relative;
+  width: 20%;
+  height: 95%;
+  float: left;
+  padding: 5px;
+  background-color: #fff;
+}
+
+#stage {
+  position: relative;
+  border: 2px dashed #999999;
+  width: 80%;
+  height: 100%;
+  float: left;
+  padding: 8px;
+  XXbox-sizing: border-box;
+}	
+
+#stage &gt; div {
+  margin-bottom: 1.5em;
+}
+
+#fieldID {
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.grid-container-2col {
+  position: relative;
+  display: flex;
+	cursor: grabbing;
+	background: #fcfcfc;  
+  width: 100%;
+	margin-bottom: 0.5em;
+	XXz-index: 1; 
+}
+
+.col {
+  flex: 1;
+  border: 1px dashed #999999;
+  padding: 2px;
+  height: 40px;
+}
+
+.dropped-field {
+  position: relative;
+	cursor: pointer;
+  height: auto;
+	background-color: #fcfcfc;
+	width: 100%;
+	padding: 8px;
+  border-radius: 4px;;
+	box-shadow: rgba( 0, 0, 0, 0.3 ) 0px 0px 1px 1px;  
+}
+
+.dropped-field:hover {
+  border: 1px solid #1111ff;
+}
+
+.dropped-field.selected {
+  border: 2px solid #2222ff;
+}
+
+.dropped-field-header {
+  font-weight: bold;
+  font-size: 1.20em;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 8px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+  padding: 6px;
+  margin-right: 6px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+select {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+button {
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.fieldbox {
+  position: relative;
+  border: 1px solid #999999;
+  width: 100%;
+  float: left;
+  padding: 5px;
+	XXz-index: 1;
+  border-radius: 2%;
+  XXbox-shadow: rgba( 0, 0, 0, 0.3 ) 0px 0px 1px 1px;  
+}
+
+.edit {
+  float: right;
+  cursor: pointer;
+  font-size: 14pt;
+}
+
+.delete {
+  float: right;
+  cursor: pointer;
+  font-size: 14pt;
+  color: red;
+  padding-left: .5em;
+}
+
+.field {
+	cursor: grabbing;
+	background: #fcfcfc;
+	sheight: 2em;
+	width: 100%;
+	max-width: 100%;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	XXz-index: 1;
+	box-shadow: rgba( 0, 0, 0, 0.3 ) 0px 0px 1px 1px;
+
+}
+*/
+
+/**
+ * Elements inside of each draggable .thing (such as the label) need to have the same cursor
+ * property as the .thing's themselves
+ */
+
+/*
+.field * {
+	cursor: grabbing;
+}
+
+.field label {
+	cursor: grabbing;
+}
+
+.draggable-indicator {
+	padding-right: 1px;
+}
+
+#propertySheet {
+  visibility: hidden;
+  min-width: 450px;
+  margin-left: -125px;
+  background-color: #eee;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  bottom: 50%;
+
+  display: grid;
+  grid: auto auto;
+  grid-column-gap: 50px;
+  padding: 8px;
+  border: 1px solid #999999;
+}
+
+#ps-header {
+  grid-column-start: span 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  padding: 5px;
+  color: #fff;
+ 	background-color: #3a3f51; 
+}
+
+.ps-row1{
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.ps-row2 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.ps-row3 {
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.ps-row4 {
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+.ps-row5 {
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+
+#propertySheet.show {
+  visibility: visible;
+  XX-webkit-animation: fadein 0.5s;
+  XXanimation: fadein 0.5s;
+}
+
+#propertySheet.hide {
+  XX-webkit-animation: fadeout 0.5s 2.5s;
+  XXanimation: fadeout 0.5s 2.5s;
+}
+*/
+
+/*
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 50%; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 50%; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 50%; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 50%; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+*/
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>fb_form_builder</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Form Builder</name>
+        <option_schema>[{"name":"title","section":"other","default_value":"Form Builder","label":"Title","type":"string"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	// get the form id from the query string
+	data.form_id = $sp.getParameter('form_id');
+	
+	// get the other form stuff
+  getUserFormStuff();
+	
+	var formfields = [];
+	var gr = new GlideRecord('x_159204_fb_form_fields');
+	gr.addActiveQuery();
+	gr.orderBy('order');
+	gr.query();
+	
+	while (gr.next()) {
+		var field = {};
+		field.name = gr.name.toString();
+		field.label = gr.label.toString();
+		field.class = gr.class.toString();
+		field.order = gr.order.toString();
+		field.type = gr.type.toString();
+		field.templ_html = gr.html_template.toString();
+		
+		formfields.push(field);
+	}
+	
+	data.formfields = new global.JSON().encode(formfields);
+	
+	/*******************************************************/
+	
+	function getUserFormStuff() {
+		var gr = new GlideRecord('x_159204_fb_forms');
+		gr.get($sp.getParameter('form_id'));
+		
+		if (gr) {
+			data.form_number = gr.number.toString();
+			data.form_desc = gr.description.toString();	
+			
+			return;
+		}
+		else {
+			gs.addErrorMessage('Form sys_id not found!! Look under the table.');
+		}
+	}
+})();
+
+
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-09 18:46:41</sys_created_on>
+        <sys_id>ec0dfd682f41e010732c4ae72799b640</sys_id>
+        <sys_mod_count>268</sys_mod_count>
+        <sys_name>Form Builder</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sp_widget_ec0dfd682f41e010732c4ae72799b640</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-21 02:17:55</sys_updated_on>
+        <template><![CDATA[<div id="formBuilder">
+  <script>
+    //gets the angular scope from outside because 
+    //we don't have access to it for drag events
+    function getScope() {
+      return angular.element('#formBuilder').scope().c;
+    }
+  </script>
+
+  <div class="header">
+   Form Builder
+   <span style="font-size: .6em;">by nervous<span style="color: red;">sow</span></span>
+  </div>
+
+  <div class="topnav">
+    <p>
+      <span style="margin-right: 20px;">Number: {{data.form_number}}</span>
+      Short description: 
+      <input type="text" id="shortDescription" value="{{data.form_desc}}" />
+      <button>Save</button>
+      <button>Preview</button>
+    </p>
+  </div>
+
+  <div class="row">
+
+    <!-- left column -->
+    <div class="column left">
+      <h2 style="margin-left: 15px;">Fields</h2>
+      <div id="{{field.name}}" class="{{field.class}}" ng-repeat="field in c.fields" draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+        <span class="draggable-indicator">᎒᎒᎒</span><label>{{field.label}}</label>
+      </div>  
+    </div>
+
+    <!-- middle column -->
+    <div class="column middle">
+      <h2>Stage</h2>
+      <div id="stage" ondrop="getScope().drop(event)" ondragover="getScope().dragOver(event)" ></div>
+    </div>
+
+    <!-- right column -->
+    <div class="column right">
+      
+      <div id="propertySheet">
+        <h2>Properties</h2>
+        <div class="ps-row1">
+          ID: <span id="fieldID">{{c.psFieldID}}</span> 
+        </div>  
+        <div class="ps-row2">
+          Label: 
+        </div>  
+        <div class="ps-row3">
+          <input type="text" id="psLabelText" />
+        </div> 
+        <div>
+          Description:
+        </div>
+        <div>
+          <textarea id="description" rows="2" style="width: 90%;"></textarea>
+        </div> 
+        
+        <div id="optionsPanel">
+          <div>
+            Options:
+          </div>
+          <div>
+            <input type="text" class="" value="Option 1" name="" style="float: left;">
+            <input type="text" class="" value="option-1" name="" style="margin-left: 5px; float: left;">
+          </div>          
+        </div>
+
+        
+        <div class="ps-row4">
+          <label for="mandatory">Mandatory: </label>
+          <input type="checkbox" id="mandatory" /> 
+        </div> 
+        <div class="ps-row5">
+          <button id="btnApply" ng-click="c.psApply()">
+            Apply
+          </button>
+          <button id="btnCancel" ng-click="c.psCancel()">
+            Cancel
+          </button>    
+          <button id="btnDelete" ng-click="c.psDelete()">
+            Delete
+          </button>    
+        </div>     
+      </div>    
+      
+      <h2 style="margin-top: 40px;">
+      	Form Data
+      </h2>
+      <p>
+        <textarea id="json" rows="7" style="width: 95%;">{{c.formData}}</textarea>
+      </p>
+      
+
+    </div>
+  </div>
+
+</div>  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--
+  
+
+
+  <div id="propertySheet" style="display: none;">
+    <div id="ps-header">Properties</div>
+    <div class="ps-row1">
+      ID: <span id="fieldID">{{c.psFieldID}}</span> 
+    </div>  
+    <div class="ps-row2">
+      Label: 
+    </div>  
+    <div class="ps-row3">
+      <input type="text" id="labelText" />
+    </div> 
+    <div>
+      Description:
+    </div>
+    <div>
+      <textarea id="description" rows="1" style="width: 100%;"></textarea>
+    </div> 
+    <div class="ps-row4">
+      <label for="mandatory">Mandatory: </label>
+      <input type="checkbox" id="mandatory" /> 
+    </div> 
+    <div class="ps-row5">
+      <button id="btnApply">
+        Apply
+      </button>
+      <button id="btnCancel" ng-click="c.psCancel()">
+        Cancel
+      </button>    
+      <button id="btnDelete" ng-click="c.psDelete()">
+        Delete
+      </button>    
+    </div>     
+  </div>  
+  
+  
+  <div id="appContainerGrid">
+    <div id="fieldscontainer">
+      <div stye="width: 100%; text-align: center;">
+         <button>Preview</button>
+        <button>Save</button>
+      </div>
+      <div id="{{field.name}}" class="{{field.class}}" ng-repeat="field in c.fields" draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+        <span class="draggable-indicator">᎒᎒᎒</span><label>{{field.label}}</label>
+      </div>   
+
+      <!--
+      <div id="field_audio" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Audio</label></div>
+      <div id="field_caldt" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Calendar Date/Time</label></div>
+      <div id="field_choice" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Choice</label></div>    
+      <div id="field_currency" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Currency</label></div>  
+      <div id="field_date" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Date</label></div>  
+      <div id="field_decimal" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Decimal</label></div>  
+      <div id="field_duedate" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Due Date</label></div>  
+      <div id="field_duration" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Duration</label></div>  
+      <div id="field_string" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>String</label></div> 
+      <div id="field_time" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>Time</label></div>  
+      <div id="field_yesno" class="field" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)"><span class="draggable-indicator">᎒᎒᎒</span><label>True/False</label></div> 
+      -->
+  <!--
+    </div>
+		<div>
+      Short description: 
+    </div>
+    
+    <div id="stage" ondrop="getScope().drop(event)" ondragover="getScope().dragOver(event)" ></div>
+    
+  </div>
+
+</div>
+-->
+]]></template>
+    </sp_widget>
+</record_update>

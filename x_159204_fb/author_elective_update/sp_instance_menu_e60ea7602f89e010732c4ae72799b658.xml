@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_menu">
+    <sp_instance_menu action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">6b2ce3ec2f49e010732c4ae72799b678</sp_column>
+        <sp_widget display_value="Header Menu">5ef595c1cb12020000f8d856634c9c6e</sp_widget>
+        <sys_class_name>sp_instance_menu</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-10 03:00:31</sys_created_on>
+        <sys_id>e60ea7602f89e010732c4ae72799b658</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Form Builder</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sp_instance_menu_e60ea7602f89e010732c4ae72799b658</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-10 03:00:46</sys_updated_on>
+        <title>Form Builder</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_menu>
+    <sys_translated_text action="DELETE" query="documentkey=e60ea7602f89e010732c4ae72799b658"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sp_instance_menu_e60ea7602f89e010732c4ae72799b658</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_menu"><sp_instance_menu action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">6b2ce3ec2f49e010732c4ae72799b678</sp_column><sp_widget display_value="Header Menu">5ef595c1cb12020000f8d856634c9c6e</sp_widget><sys_class_name>sp_instance_menu</sys_class_name><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-12-10 03:00:31</sys_created_on><sys_id>e60ea7602f89e010732c4ae72799b658</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Form Builder</sys_name><sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package><sys_policy/><sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope><sys_update_name>sp_instance_menu_e60ea7602f89e010732c4ae72799b658</sys_update_name><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-12-10 03:00:46</sys_updated_on><title>Form Builder</title><url/><widget_parameters/></sp_instance_menu><sys_translated_text action="delete_multiple" query="documentkey=e60ea7602f89e010732c4ae72799b658"/></record_update>]]></payload>
+        <payload_hash>725580061</payload_hash>
+        <record_name>Form Builder</record_name>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-10 03:00:46</sys_created_on>
+        <sys_id>5a1e2f202f89e010732c4ae72799b667</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1764a980aa50000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-10 03:00:46</sys_updated_on>
+        <type>Instance with Menu</type>
+        <update_guid>de1e2f202189e0106545b42beeeefe66</update_guid>
+        <update_guid_history>de1e2f202189e0106545b42beeeefe66:725580061,e60ea7604089e010adc1cb5852fdca5a:-1686935964</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Form Builder">584eab602f89e010732c4ae72799b654</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-10 03:01:27</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_menu">sp_instance_menu</sys_db_object>
+        <sys_id>482b651e581c4cdcbe8ff900099656d9</sys_id>
+        <sys_metadata>e60ea7602f89e010732c4ae72799b658</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Form Builder</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sp_instance_menu_e60ea7602f89e010732c4ae72799b658</sys_update_name>
+        <sys_update_version display_value="sp_instance_menu_e60ea7602f89e010732c4ae72799b658">5a1e2f202f89e010732c4ae72799b667</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-10 03:01:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

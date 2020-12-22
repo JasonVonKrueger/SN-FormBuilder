@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-30 01:03:03</sys_created_on>
+        <sys_id>b4b75a71db521010ab71f7af299619f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_159204_fb_fields.x_159204_fb.fields_user</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_security_acl display_value="x_159204_fb_fields">bcb75a71db521010ab71f7af299619f2</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_b4b75a71db521010ab71f7af299619f7</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-30 01:03:03</sys_updated_on>
+        <sys_user_role display_value="x_159204_fb.fields_user" name="x_159204_fb.fields_user">a0b7de31db521010ab71f7af2996199e</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sys_security_acl_role_b4b75a71db521010ab71f7af299619f7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-30 01:03:03</sys_created_on><sys_id>b4b75a71db521010ab71f7af299619f7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_159204_fb_fields.x_159204_fb.fields_user</sys_name><sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package><sys_policy/><sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope><sys_security_acl display_value="x_159204_fb_fields">bcb75a71db521010ab71f7af299619f2</sys_security_acl><sys_update_name>sys_security_acl_role_b4b75a71db521010ab71f7af299619f7</sys_update_name><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-30 01:03:03</sys_updated_on><sys_user_role display_value="x_159204_fb.fields_user" name="x_159204_fb.fields_user">a0b7de31db521010ab71f7af2996199e</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1498901783</payload_hash>
+        <record_name>x_159204_fb_fields.x_159204_fb.fields_user</record_name>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-30 01:03:03</sys_created_on>
+        <sys_id>74b75a71db521010ab71f7af299619fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1739d3e75a80000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-30 01:03:03</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>7cb75a71f652101081b215e85b01d7fa</update_guid>
+        <update_guid_history>7cb75a71f652101081b215e85b01d7fa:-1498901783</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_159204_fb_fields.x_159204_fb.fields_user">93ffdf9edb5e5010ab71f7af299619de</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-31 19:35:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>8e0836f8e46643ecb515973760b31290</sys_id>
+        <sys_metadata>b4b75a71db521010ab71f7af299619f7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_159204_fb_fields.x_159204_fb.fields_user</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent display_value="">bcb75a71db521010ab71f7af299619f2</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_b4b75a71db521010ab71f7af299619f7</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_b4b75a71db521010ab71f7af299619f7">74b75a71db521010ab71f7af299619fb</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-31 19:35:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

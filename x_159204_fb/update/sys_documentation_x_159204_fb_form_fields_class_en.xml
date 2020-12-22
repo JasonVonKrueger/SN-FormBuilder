@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="class" label="Class" language="en" table="x_159204_fb_form_fields">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>class</element>
+            <help/>
+            <hint/>
+            <label>Class</label>
+            <language>en</language>
+            <name>x_159204_fb_form_fields</name>
+            <plural>Class</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-12-09 20:08:09</sys_created_on>
+            <sys_id>0aafcea82fc1e010732c4ae72799b645</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Class</sys_name>
+            <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+            <sys_update_name>sys_documentation_x_159204_fb_form_fields_class_en</sys_update_name>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-12-09 20:08:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

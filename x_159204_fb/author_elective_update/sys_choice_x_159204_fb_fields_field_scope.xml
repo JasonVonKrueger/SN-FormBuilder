@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="DELETE" field="field_scope" table="x_159204_fb_fields" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>field_scope</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Input set field</label>
+            <language>en</language>
+            <name>x_159204_fb_fields</name>
+            <sequence>300</sequence>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-31 19:16:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>736b535adb5e5010ab71f7af29961955</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-31 19:24:07</sys_updated_on>
+            <value>input_set_field</value>
+        </sys_choice>
+        <sys_choice_set action="DELETE">
+            <element>field_scope</element>
+            <name>x_159204_fb_fields</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>rpoore_admin</sys_created_by>
+            <sys_created_on>2020-07-31 19:15:56</sys_created_on>
+            <sys_id>bb6b5f9adb5e5010ab71f7af2996195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>field_scope</sys_name>
+            <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+            <sys_update_name>sys_choice_x_159204_fb_fields_field_scope</sys_update_name>
+            <sys_updated_by>rpoore_admin</sys_updated_by>
+            <sys_updated_on>2020-07-31 19:15:56</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sys_choice_x_159204_fb_fields_field_scope</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_choice action="INSERT_OR_UPDATE" field="field_scope" table="x_159204_fb_fields" version="3"><sys_choice action="INSERT_OR_UPDATE"><dependent_value/><element>field_scope</element><hint/><inactive>false</inactive><label>Input set field</label><language>en</language><name>x_159204_fb_fields</name><sequence>300</sequence><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-31 19:16:12</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>736b535adb5e5010ab71f7af29961955</sys_id><sys_mod_count>2</sys_mod_count><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-31 19:24:07</sys_updated_on><value>input_set_field</value></sys_choice><sys_choice_set action="INSERT_OR_UPDATE"><element>field_scope</element><name>x_159204_fb_fields</name><sys_class_name>sys_choice_set</sys_class_name><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-31 19:15:56</sys_created_on><sys_id>bb6b5f9adb5e5010ab71f7af2996195a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>field_scope</sys_name><sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package><sys_policy/><sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope><sys_update_name>sys_choice_x_159204_fb_fields_field_scope</sys_update_name><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-31 19:15:56</sys_updated_on></sys_choice_set></sys_choice></record_update>]]></payload>
+        <payload_hash>-1004187263</payload_hash>
+        <record_name>x_159204_fb_fields.field_scope</record_name>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-31 19:35:52</sys_created_on>
+        <sys_id>b7ff13dedb5e5010ab71f7af29961995</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>173a65fa54a0000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-31 19:35:52</sys_updated_on>
+        <type>Choice list</type>
+        <update_guid>3fff13de985e5010511653b650c55894</update_guid>
+        <update_guid_history>3fff13de985e5010511653b650c55894:-1004187263,3bff13de6b5e5010c4797668c3f91d91:1094405168,634d1f1ed45e5010661da50f372db613:-107632415,c34d9fdae35e50105df4ecaa35ed1ec6:554419157,243dd31e315e5010bf0b4d898d328d40:2026681408,062d9b1efa5e5010375c49896b2a8d23:-1702224725,598bd39ac65e50107b66967b20d6574e:74734671,2b7bd3da5c5e5010b4e96b37f4ecb613:823129908,917b13da9f5e5010a96ad187dcaaee8b:2075054994,336b5f9aea5e501014fb07584e00715c:-1624042651</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-31 19:35:52</sys_created_on>
+        <sys_db_object display_value="" name="sys_choice_set">sys_choice_set</sys_db_object>
+        <sys_id>bb6b5f9adb5e5010ab71f7af2996195a</sys_id>
+        <sys_metadata>bb6b5f9adb5e5010ab71f7af2996195a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>field_scope</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sys_choice_x_159204_fb_fields_field_scope</sys_update_name>
+        <sys_update_version display_value="sys_choice_x_159204_fb_fields_field_scope">b7ff13dedb5e5010ab71f7af29961995</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-31 19:35:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

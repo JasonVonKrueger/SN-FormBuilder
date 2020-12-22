@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency">
+    <sp_dependency action="DELETE">
+        <module/>
+        <name>form-builder.min.js</name>
+        <page_load>true</page_load>
+        <sp_portals/>
+        <sys_class_name>sp_dependency</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-12 23:16:30</sys_created_on>
+        <sys_id>712c1e54dbce5010ab71f7af299619a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>form-builder.min.js</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sp_dependency_712c1e54dbce5010ab71f7af299619a2</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-12 23:16:30</sys_updated_on>
+    </sp_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sp_dependency_712c1e54dbce5010ab71f7af299619a2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency"><sp_dependency action="INSERT_OR_UPDATE"><module/><name>form-builder.min.js</name><page_load>true</page_load><sp_portals/><sys_class_name>sp_dependency</sys_class_name><sys_created_by>rpoore_admin</sys_created_by><sys_created_on>2020-07-12 23:16:30</sys_created_on><sys_id>712c1e54dbce5010ab71f7af299619a2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>form-builder.min.js</sys_name><sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package><sys_policy/><sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope><sys_update_name>sp_dependency_712c1e54dbce5010ab71f7af299619a2</sys_update_name><sys_updated_by>rpoore_admin</sys_updated_by><sys_updated_on>2020-07-12 23:16:30</sys_updated_on></sp_dependency></record_update>]]></payload>
+        <payload_hash>-2110891236</payload_hash>
+        <record_name>form-builder.min.js</record_name>
+        <reverted_from/>
+        <source>020f870edbbd5010ab71f7af2996198f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-12 23:16:30</sys_created_on>
+        <sys_id>9a4c1a54dbce5010ab71f7af29961982</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1734550cd870000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-12 23:16:30</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>924c1a5445ce5010045cfef70cd92682</update_guid>
+        <update_guid_history>924c1a5445ce5010045cfef70cd92682:-2110891236</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="form-builder.min.js">60cc5a54dbce5010ab71f7af299619af</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-12 23:18:33</sys_created_on>
+        <sys_db_object display_value="" name="sp_dependency">sp_dependency</sys_db_object>
+        <sys_id>225fcb25a9a24f10a4ca99e6ddd4e511</sys_id>
+        <sys_metadata>712c1e54dbce5010ab71f7af299619a2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>form-builder.min.js</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sp_dependency_712c1e54dbce5010ab71f7af299619a2</sys_update_name>
+        <sys_update_version display_value="sp_dependency_712c1e54dbce5010ab71f7af299619a2">9a4c1a54dbce5010ab71f7af29961982</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-12 23:18:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

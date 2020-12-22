@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="DELETE">
+        <category>general</category>
+        <client_script><![CDATA[jQuery(function($) {
+    var options = {
+        dataType: 'xml',
+        onSave: function(evt, formData) {
+            showPreview(formData);
+        },
+        formData: '<form-template><fields><field name="text-input-1454163102327" class="form-control" label="Text Field" description="" required="false" type="text" /><field name="date-input-1454163105133" class="form-control" label="Date Field" description="" required="false" type="date" /><field name="checkbox-group-1454163056695" label="Checkbox Group" style="multiple" description="" required="false" type="checkbox-group"><option value="option-1">Option 1</option><option value="option-2">Option 2</option></field></fields></form-template>'
+    };
+    var $fbEditor = $(document.getElementById('fb-editor'));
+
+    var formBuilder = $fbEditor.formBuilder(options);
+
+    function showPreview(formData) {
+        var formRenderOpts = {
+            dataType: 'xml',
+            formData: formData
+        };
+        var renderContainer = $('<form/>');
+		
+        renderContainer.formRender(formRenderOpts);
+		
+        var html = '<!doctype html><title>Form Preview</title><body class="container"><h1>Preview</h1><hr>' + renderContainer.html() + '</body></html>';
+        var formPreviewWindow = window.open('', 'formPreview', 'height=480,width=640,toolbar=no,scrollbars=yes');
+
+        formPreviewWindow.document.write(html);
+        var style = document.createElement('link');
+        style.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+        style.setAttribute('rel', 'stylesheet');
+        style.setAttribute('type', 'text/css');
+        formPreviewWindow.document.head.appendChild(style);
+    }
+
+});]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_159204_fb_Form Buider Preview.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+fdafdsa
+<div id="fb-editor"></div>
+	
+
+	
+	<script language="javascript" src="x_159204_fb.jquery.min.js.jsdbx" />
+	<script language="javascript" src="x_159204_fb.jquery-ui.min.js.jsdbx" />
+	<script language="javascript" src="x_159204_fb.form-builder.min.js.jsdbx" />	
+	<script language="javascript" src="x_159204_fb.form-render.min.js.jsdbx" />
+	
+</j:jelly>]]></html>
+        <name>Form Buider Preview</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-30 02:53:13</sys_created_on>
+        <sys_id>cc507eb5db921010ab71f7af29961967</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Form Buider Preview</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_ui_page_cc507eb5db921010ab71f7af29961967</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-08-08 18:22:34</sys_updated_on>
+    </sys_ui_page>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sys_ui_page_cc507eb5db921010ab71f7af29961967</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[jQuery(function($) {
+    var options = {
+        dataType: 'xml',
+        onSave: function(evt, formData) {
+            showPreview(formData);
+        },
+        formData: '&lt;form-template&gt;&lt;fields&gt;&lt;field name="text-input-1454163102327" class="form-control" label="Text Field" description="" required="false" type="text" /&gt;&lt;field name="date-input-1454163105133" class="form-control" label="Date Field" description="" required="false" type="date" /&gt;&lt;field name="checkbox-group-1454163056695" label="Checkbox Group" style="multiple" description="" required="false" type="checkbox-group"&gt;&lt;option value="option-1"&gt;Option 1&lt;/option&gt;&lt;option value="option-2"&gt;Option 2&lt;/option&gt;&lt;/field&gt;&lt;/fields&gt;&lt;/form-template&gt;'
+    };
+    var $fbEditor = $(document.getElementById('fb-editor'));
+
+    var formBuilder = $fbEditor.formBuilder(options);
+
+    function showPreview(formData) {
+        var formRenderOpts = {
+            dataType: 'xml',
+            formData: formData
+        };
+        var renderContainer = $('&lt;form/&gt;');
+		
+        renderContainer.formRender(formRenderOpts);
+		
+        var html = '&lt;!doctype html&gt;&lt;title&gt;Form Preview&lt;/title&gt;&lt;body class="container"&gt;&lt;h1&gt;Preview&lt;/h1&gt;&lt;hr&gt;' + renderContainer.html() + '&lt;/body&gt;&lt;/html&gt;';
+        var formPreviewWindow = window.open('', 'formPreview', 'height=480,width=640,toolbar=no,scrollbars=yes');
+
+        formPreviewWindow.document.write(html);
+        var style = document.createElement('link');
+        style.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+        style.setAttribute('rel', 'stylesheet');
+        style.setAttribute('type', 'text/css');
+        formPreviewWindow.document.head.appendChild(style);
+    }
+
+});]]&gt;&lt;/client_script&gt;&lt;description/&gt;&lt;direct&gt;false&lt;/direct&gt;&lt;endpoint&gt;x_159204_fb_Form Buider Preview.do&lt;/endpoint&gt;&lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+fdafdsa
+&lt;div id="fb-editor"&gt;&lt;/div&gt;
+	
+
+	
+	&lt;script language="javascript" src="x_159204_fb.jquery.min.js.jsdbx" /&gt;
+	&lt;script language="javascript" src="x_159204_fb.jquery-ui.min.js.jsdbx" /&gt;
+	&lt;script language="javascript" src="x_159204_fb.form-builder.min.js.jsdbx" /&gt;	
+	&lt;script language="javascript" src="x_159204_fb.form-render.min.js.jsdbx" /&gt;
+	
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;Form Buider Preview&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;rpoore_admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-07-30 02:53:13&lt;/sys_created_on&gt;&lt;sys_id&gt;cc507eb5db921010ab71f7af29961967&lt;/sys_id&gt;&lt;sys_mod_count&gt;23&lt;/sys_mod_count&gt;&lt;sys_name&gt;Form Buider Preview&lt;/sys_name&gt;&lt;sys_package display_value="Form Builder" source="x_159204_fb"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Form Builder"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_cc507eb5db921010ab71f7af29961967&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;rpoore_admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-08-08 18:22:34&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-707584078</payload_hash>
+        <record_name>Form Buider Preview</record_name>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-08-08 18:22:34</sys_created_on>
+        <sys_id>84fb5889dba25010ab71f7af29961949</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>173cf4f67f20000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-08-08 18:22:34</sys_updated_on>
+        <type>UI Page</type>
+        <update_guid>0cfb5889ffa2501036999eaa058f9448</update_guid>
+        <update_guid_history>0cfb5889ffa2501036999eaa058f9448:-707584078,b2bbdc8926a25010274c0215139bc07c:-403565178,c73b98c552a2501028b950a806aacde8:-1146582594,120b1c492ea25010dd7ea47eb19c291e:-606833352,a0ead0891ea2501018f495df260100d4:1213849685,604a98c500a2501057272fea9d52d7cc:-1600088130,f5e858095da2501085a73205f69ecdfc:1471689401,142898c563a25010a22b90c17ed59ec0:-1945155767,7db798c5fda25010c9b0b3efb083e125:1897004123,68c650852ea25010d15f24e8ab85f1be:-243158478,d9a6d88583a250103bc8001aa1466b3b:2046076923,173a480db5625010d750e8c41e8f8c32:531631159,570a0089df625010eff0f7c2195b9677:15218306,edb984895b625010a52ec5848a3d0f3c:1859885602,2cc80089f3625010a359b52cc20502b7:1661884964,92d74889a8625010b1605779e23a96dc:2107264465,589648496b625010ed2a7af5304dbf33:-1843841044,fa86084975625010385c75808ce8859e:-194098820,2b5684097162501032cfa50bcba31fe8:1707327323,642644c5ca625010a33cb29ba30e6278:1012983758,cc654cc53b62501087de5bff5acddeb8:-1600611986,99f3fe3980921010e4956aea894e1a9d:-587504673,e1f2bef1cc92101048b9e1c2ed61e90e:-180352991,76e0f6f1a2921010758a1b0c9ef5531b:-1620620007</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-08-16 00:01:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_page">sys_ui_page</sys_db_object>
+        <sys_id>44a50a56e2054122aebb8c1640e5a7f9</sys_id>
+        <sys_metadata>cc507eb5db921010ab71f7af29961967</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Form Buider Preview</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sys_ui_page_cc507eb5db921010ab71f7af29961967</sys_update_name>
+        <sys_update_version display_value="sys_ui_page_cc507eb5db921010ab71f7af29961967">84fb5889dba25010ab71f7af29961949</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-08-16 00:01:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

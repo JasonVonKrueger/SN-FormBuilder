@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">9c6233a42f89e010732c4ae72799b6b2</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-10 03:20:01</sys_created_on>
+        <sys_id>4c8233a42f89e010732c4ae72799b6a3</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sp_instance_4c8233a42f89e010732c4ae72799b6a3</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-10 17:17:36</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<div style=\"width: 95%; height: 100%; color: #fff; font-size: 20pt; padding: 5px; background: #b8c8df; border: #000 1px solid; margin-left: auto; margin-right: auto;\" data-mce-style=\"width: 95%; height: 100%; color: #fff; font-size: 20pt; padding: 5px; background: #b8c8df; border: #000 1px solid; margin-left: auto; margin-right: auto;\">Form Builder<span style=\"margin-left: 7px; font-size: 14pt;\" data-mce-style=\"margin-left: 7px; font-size: 14pt;\">by nervous<span style=\"color: red;\" data-mce-style=\"color: red;\">sow</span></span></div>",
+		"displayValue": "<div style=\"width: 95%; height: 100%; color: #fff; font-size: 20pt; padding: 5px; background: #b8c8df; border: #000 1px solid; margin-left: auto; margin-right: auto;\">Form Builder<span style=\"margin-left: 7px; font-size: 14pt;\">by nervous<span style=\"color: red;\">sow</span></span></div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=4c8233a42f89e010732c4ae72799b6a3"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sp_instance_4c8233a42f89e010732c4ae72799b6a3</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;9c6233a42f89e010732c4ae72799b6b2&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;rpoore_admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-12-10 03:20:01&lt;/sys_created_on&gt;&lt;sys_id&gt;4c8233a42f89e010732c4ae72799b6a3&lt;/sys_id&gt;&lt;sys_mod_count&gt;20&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Form Builder" source="x_159204_fb"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Form Builder"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_4c8233a42f89e010732c4ae72799b6a3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;rpoore_admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-12-10 17:17:36&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;div style=\"width: 95%; height: 100%; color: #fff; font-size: 20pt; padding: 5px; background: #b8c8df; border: #000 1px solid; margin-left: auto; margin-right: auto;\" data-mce-style=\"width: 95%; height: 100%; color: #fff; font-size: 20pt; padding: 5px; background: #b8c8df; border: #000 1px solid; margin-left: auto; margin-right: auto;\"&gt;Form Builder&lt;span style=\"margin-left: 7px; font-size: 14pt;\" data-mce-style=\"margin-left: 7px; font-size: 14pt;\"&gt;by nervous&lt;span style=\"color: red;\" data-mce-style=\"color: red;\"&gt;sow&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;",
+		"displayValue": "&lt;div style=\"width: 95%; height: 100%; color: #fff; font-size: 20pt; padding: 5px; background: #b8c8df; border: #000 1px solid; margin-left: auto; margin-right: auto;\"&gt;Form Builder&lt;span style=\"margin-left: 7px; font-size: 14pt;\"&gt;by nervous&lt;span style=\"color: red;\"&gt;sow&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=4c8233a42f89e010732c4ae72799b6a3"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1144215190</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>883bf7a8db021010ab71f7af299619a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-10 17:17:36</sys_created_on>
+        <sys_id>253272fc2fc52410732c4ae72799b625</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1764da87f3f0000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-10 17:17:36</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>a93272fc68c52410ca2417531a648124</update_guid>
+        <update_guid_history>a93272fc68c52410ca2417531a648124:-1144215190,9b02b6fca8c524104c835832fbdc42ec:677932099,f4417a7c47c5241003ead52fa726b8e2:-153714479,3e1172fcedc524100bfda3bee236e919:1985979627,4de032fc108524105380d660cc25a134:-1257973916,6ffc3b6013c9e010c2486f09f895c731:1602392146,e52cbb208dc9e0104f5db220e3c7b791:795966825,9bfb7f2038c9e010902de9f877a034d8:-1697710338,d7bbff20adc9e01021dd0540a40bccd5:1514354784,89abbb20dcc9e010ef1cb720dd72f39b:1751235036,ce7bbb20d1c9e01006bf110bb23e9d89:-1101440863,814bb72039c9e0107d3aea85097a459b:974173301,75ca3beca989e010adb92818dea85c3a:1461690170,aa8a73ec4089e0107005912c60be71ab:455946742,051a372c6a89e0108ee01fac421629e6:604266018,5fb9bbac7289e0109d664bec0ac9e3cf:-1052753695,56f5b3a82789e010131a29ec648bbba5:-65382284,f2053728ca89e0109702be7e33dfe286:459009311,35843728f989e010bbcb07808a532277:337504601,0fc377e45889e0106b71ba304565a731:887187744,088233a48089e01010a6ae51e45db0a5:-1367226187</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">82939ffe2fc96010732c4ae72799b645</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-12-17 00:51:18</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>f1d84d8c478f4e93a643d20a244f3a81</sys_id>
+        <sys_metadata>4c8233a42f89e010732c4ae72799b6a3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sp_instance_4c8233a42f89e010732c4ae72799b6a3</sys_update_name>
+        <sys_update_version display_value="sp_instance_4c8233a42f89e010732c4ae72799b6a3">253272fc2fc52410732c4ae72799b625</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 00:51:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>false</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Allow read for records in x_159204_fb_forms, for users with role snc_internal, and if the ACL script returns true.</description>
+        <name>x_159204_fb_forms</name>
+        <operation display_value="read">read</operation>
+        <script><![CDATA[current.sys_created_by == gs.getUserID();]]></script>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-12 22:02:42</sys_created_on>
+        <sys_id>f81b4e14db8e5010ab71f7af299619be</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_159204_fb_forms</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_update_name>sys_security_acl_f81b4e14db8e5010ab71f7af299619be</sys_update_name>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-12 22:25:43</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Form Builder">0d35fa17db691010ab71f7af29961984</application>
+        <file_path/>
+        <instance_id>dbd8008adb903f000b9d21c405961958</instance_id>
+        <instance_name>dev76398</instance_name>
+        <name>sys_security_acl_f81b4e14db8e5010ab71f7af299619be</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_security_acl"&gt;&lt;sys_security_acl action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;admin_overrides&gt;true&lt;/admin_overrides&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;condition/&gt;&lt;description&gt;Allow read for records in x_159204_fb_forms, for users with role snc_internal, and if the ACL script returns true.&lt;/description&gt;&lt;name&gt;x_159204_fb_forms&lt;/name&gt;&lt;operation display_value="read"&gt;read&lt;/operation&gt;&lt;script&gt;&lt;![CDATA[current.sys_created_by == gs.getUserID();]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_security_acl&lt;/sys_class_name&gt;&lt;sys_created_by&gt;rpoore_admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-07-12 22:02:42&lt;/sys_created_on&gt;&lt;sys_id&gt;f81b4e14db8e5010ab71f7af299619be&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;x_159204_fb_forms&lt;/sys_name&gt;&lt;sys_package display_value="Form Builder" source="x_159204_fb"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Form Builder"&gt;0d35fa17db691010ab71f7af29961984&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_security_acl_f81b4e14db8e5010ab71f7af299619be&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;rpoore_admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-07-12 22:25:43&lt;/sys_updated_on&gt;&lt;type display_value="record"&gt;record&lt;/type&gt;&lt;/sys_security_acl&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1640750593</payload_hash>
+        <record_name>x_159204_fb_forms</record_name>
+        <reverted_from/>
+        <source>020f870edbbd5010ab71f7af2996198f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-12 22:25:43</sys_created_on>
+        <sys_id>a2a0de98db8e5010ab71f7af299619e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>173452250090000001</sys_recorded_at>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-12 22:25:43</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>2aa0de98bf8e5010dadf8b5b0c2d52e3</update_guid>
+        <update_guid_history>2aa0de98bf8e5010dadf8b5b0c2d52e3:1640750593,9a3c4e54cf8e50109ca6de8e83a9497f:-1623535160,156b0254d88e5010837b7254c0c2c7ca:-1611959112</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>rpoore_admin</sys_created_by>
+        <sys_created_on>2020-07-12 22:32:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>57c62a591674496ca2aae7a29ed93c90</sys_id>
+        <sys_metadata>f81b4e14db8e5010ab71f7af299619be</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_159204_fb_forms</sys_name>
+        <sys_package display_value="Form Builder" source="x_159204_fb">0d35fa17db691010ab71f7af29961984</sys_package>
+        <sys_parent display_value="x_159204_fb_forms">4a8572d7db691010ab71f7af29961963</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Form Builder">0d35fa17db691010ab71f7af29961984</sys_scope>
+        <sys_scope_delete display_value="">05bd11f9ab354ef0bf6c24790dffb900</sys_scope_delete>
+        <sys_update_name>sys_security_acl_f81b4e14db8e5010ab71f7af299619be</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_f81b4e14db8e5010ab71f7af299619be">a2a0de98db8e5010ab71f7af299619e4</sys_update_version>
+        <sys_updated_by>rpoore_admin</sys_updated_by>
+        <sys_updated_on>2020-07-12 22:32:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
